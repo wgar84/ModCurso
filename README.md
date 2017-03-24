@@ -45,13 +45,13 @@
 + Os 3 tipos de &#x03B2; (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
 + Matriz &#x03B3;
 
-
 **Aula 7**: *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
 
 + Leituras principais:
 
   * Klingenberg, C. P. “Developmental constraints, modules and evolvability.” Variation: A central concept in biology (2005): 219-247.
-Observação: Ler do início até o final da seção "Evolvability and Constraints" (páginas 219 a 224). 
+    
+	* Ler do início até o final da seção "Evolvability and Constraints" (páginas 219 a 224). 
 
   * Collar, D. C., Wainwright, P. C., Alfaro, M. E., Revell, L. J., Mehta, R. S. “Biting disrupts integration to spur skull evolution in eels.” Nature communications, 5 (2014). 
 
