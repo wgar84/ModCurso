@@ -42,8 +42,8 @@
 + Fenótipo e seleção
 + Superfícies adaptativas individuais e populacionais
 + Modelos lineares e estimativas de seleção
-+ Os 3 tipos de $\beta$ (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
-+ Matriz $\gamma$
++ Os 3 tipos de $$\beta$$ (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
++ Matriz $$\gamma$$
 
 
 **Aula 7**: *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
