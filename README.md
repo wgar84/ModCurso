@@ -42,7 +42,7 @@
 + Fenótipo e seleção
 + Superfícies adaptativas individuais e populacionais
 + Modelos lineares e estimativas de seleção
-+ Os 3 tipos de U+03B2 (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
++ Os 3 tipos de (U+03B2) (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
 + Matriz $$\gamma$$
 
 
