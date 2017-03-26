@@ -1,8 +1,8 @@
 ## **592.5906** *Modularidade: conectando padrões e processos em evolução multivariada*
 
-## Preliminares
+### Preliminares
 
-### R
+#### R
 
 Inicialmente, você deve instalar o **R** no seu computador. Você pode
 encontrá-lo no sítio <http://www.r-project.org>, e lá existem instruções
@@ -37,7 +37,7 @@ básica de R oferecida pelo Departamento de Ecologia do IB-USP. O link
 "Atividades Preparatórias" oferece um introdução compreensiva da
 linguagem.
 
-## Lista de Leituras
+### Lista de Leituras
 
 **Aula 1**: *Níveis de modularidade: individual e populacional*
 
