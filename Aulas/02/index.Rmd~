@@ -1,0 +1,835 @@
+---
+title: "Perspectivas sobre o reconhecimento de padrões de
+modularidade e suas implicações para a evolução de
+morfologias complexas"
+subtitle: Guilherme Garcia
+author: "Orientador - Gabriel Marroig"
+date: Departamento de Genética e Biologia Evolutiva
+logo: ../Figuras/cerco.png
+output:
+  ioslides_presentation:
+    transitions: faster
+    self_contained: true
+    widescreen: false
+    fig_caption: true
+    toc: true
+    css: extra.css
+csl: /home/guilherme/Dropbox/Tese/Bib/evolution.csl
+bibliography: /home/guilherme/Dropbox/Global/tudo.bib
+---	
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Source+Code+Pro:500|Open+Sans|Oswald);
+</style>
+
+<style type='text/css'>
+img {
+    max-height: 560px;
+    max-width: 964px;
+}
+</style>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+</script>
+
+## Conteúdo
+
+* Introdução
+    + Genética Quantitativa
+    + Modularidade e Integração Morfológica
+    + Crânio de Mamíferos
+    + Morfometria
+
+* _Capítulo 2_: Detecção de Hipóteses de Associação
+
+* _Capítulo 3_: Alometria e Modularidade
+
+* _Capítulo 4_: Comparação entre Covariâncias Fenotípicas
+
+* Conclusões
+
+# Introdução
+
+* Genética Quantitativa
+* Modularidade e Integração Morfológica
+* Crânio de Mamíferos
+* Morfometria
+
+## Genética Quantitativa {.centered}
+![](../Figuras/breeder01.png)
+
+<div class='notes'>
+muitos alelos, distr contínua de efeitos desses alelos sobre o fenótipo
+</div>
+
+## Genética Quantitativa {.centered}
+![](../Figuras/breeder_skull.png)
+
+## Genética Quantitativa {.centered}
+![](../Figuras/breeder02.png)
+
+## Genética Quantitativa {.centered}
+![](../Figuras/breeder03.png)
+
+\[ \Delta \bar{z} = \frac {\sigma^2_a}{\sigma^2_p} s \]
+
+## Resposta à Seleção {.build .centered}
+> __Equação do Criador (1D)__ \[ \Delta \bar{z} = \frac {\sigma^2_a}{\sigma^2_p} s \]
+
+> __Equação de Lande ($n$D)__ \[ \Delta \bar{\mathbf{z}} = \mathbf{G} \mathbf{P}^{-1} \mathbf{s} \]
+<div class='notes'>
+onde delta z e s se tornam vetores, e as matrizes G e P representam as matrizes de variância/covariância entre os diferentes caracteres considerados
+</div>
+
+## Fenótipos Multidimensionais {.centered}
+![](../Figuras/lande01.png)
+
+## Fenótipos Multidimensionais {.centered}
+![](../Figuras/lande02.png)
+
+## Fenótipos Multidimensionais {.centered}
+![](../Figuras/lande03.png)
+
+## Fenótipos Multidimensionais {.centered}
+![](../Figuras/lande04.png)
+\[ \Delta \bar{\mathbf{z}} = \mathbf{G} \mathbf{P}^{-1} \mathbf{s} \]
+
+<div class='notes'>
+* elipses de confiança em torno da distribuição bivariada
+* retas: eixos de máxima variação
+</div>
+
+## Fenótipos Multidimensionais {.centered}
+![](../Figuras/lande05.png)
+\[ \Delta \bar{\mathbf{z}} = \mathbf{G} \mathbf{P}^{-1} \mathbf{s} \]
+
+## Paisagem Adaptativa {.centered}
+![](../Figuras/landscape01.png)
+
+<div class='notes'>
+curvas de nível: aptidão constante
+</div>
+
+## Paisagem Adaptativa {.centered}
+![](../Figuras/landscape02.png)
+\[ \beta = \nabla\ \text{ln}\ \bar{W}(\mathbf{z}) \]
+
+<div class='notes'>
+beta: direção de máximo incremento de aptidão em relação à média
+</div>
+
+## Paisagem Adaptativa {.centered}
+![](../Figuras/landscape02.png)
+\[ \beta = \mathbf{P}^{-1} \mathbf{s} \]
+
+<div class='notes'>
+Lande (1979) mostra essa igualdade
+</div>
+
+## Paisagem Adaptativa {.centered}
+![](../Figuras/landscape03.png)
+\[ \Delta \bar{\mathbf{z}} = \mathbf{G} \beta \]
+
+<div class='notes'>
+de modo que eu posso substituir na equação
+</div>
+
+## Paisagem Adaptativa {.centered}
+![](../Figuras/landscape04.png)
+\[ \Delta \bar{\mathbf{z}} = \mathbf{G} \beta \]
+
+## Evolução em Conjunto {.centered}
+![](../Figuras/together01.png)
+
+<div class='notes'>
+Caracteres fenotípicos evoluem de maneira concertada devido a covariâncias genéticas ou por serem selecionados conjuntamente.
+</div>
+
+## Evolução em Conjunto {.centered}
+![](../Figuras/together02.png)
+
+
+## Integração Morfológica 
+- __Olson \& Miller (1958)__
+- Organização das correlações fenotípicas entre elementos morfológicos;
+- Hipóteses a respeito das relações entre caracteres:
+    + Participação conjunta em complexos funcionais;
+    + Vias de desenvolvimento compartilhadas;
+- **Cheverud (1982, 1984, 1996)**
+    + Pleiotropia e desequilíbrio de ligação;
+    + Co-seleção.
+
+<div class='notes'>
+Cheverud: combinando integração morfológica e genética quantitativa
+pleiotropia: genes que participam das vias de desenvolvimento de mais de um caráter
+desequilíbrio de ligação: desvios das proporções mendelianas, funciona de forma similar à pleiotropia
+</div>
+
+## Mapa Genótipo-Fenótipo {.centered}
+![Wagner 1996](../Figuras/wagner.png)
+
+## Crânio de Mamíferos
+
+* Precursores embrionários: 
+    + Face: <font color='#FF181A'> Crista Neural </font>
+    + Neurocrânio: <font color='#0064FF'> Mesoderme Paraxial </font> 
+
+<div class='centered'>
+<img src='../Figuras/skull_dev.png', width=400px>
+</div>
+
+<div class='notes'>
+respostas distintas a estímulos regionais
+modos de ossificação distintos
+face: endocondral
+neuro: dérmica
+</div>
+
+## Crânio de Mamíferos {.columns-2}
+
+* Complexos Funcionais:
+    - <font color='#f423f7'> Oral </font>
+    - <font color='#ed536a'> Nasal </font>
+    - <font color='#00f00e'> Zigomático </font>
+    - <font color='#c8ab37'> Órbita </font>
+    - <font color='#124bee'> Basicrânio </font>
+    - <font color='#00c4bd'> Abóbada </font>
+
+<img src='../Figuras/skull_func.png', width=400px>
+
+<div class='notes'>
+Oral: mastigação; <br>
+Nasal: respiração/termorregulação; <br>
+Zigomático: sustentação da musculatura associada à elevação da mandíbula; <br>
+Órbita/Abóbada: proteção das órbitas oculares e SNC; <br>
+Basicrânio: sustentação das demais estruturas e conexões com o resto dos sistemas do organismo. <br>
+</div>
+
+## Expectativas {.centered}
+![](../Figuras/expect01.png)
+
+## Expectativas {.centered}
+![](../Figuras/expect02.png)
+
+## Expectativas {.centered}
+![](../Figuras/expect03.png)
+
+## Expectativas {.centered}
+![](../Figuras/expect04.png)
+
+## Expectativas {.centered}
+![](../Figuras/expect05.png)
+
+## Realidade {.centered}
+![](../Figuras/reality.png)
+
+```{r real_plot, echo = FALSE, fig.width = 7, fig.height = 2.5}
+defesa.plots $ real.plot
+```
+
+## Mapa Genótipo-Fenótipo {.centered}
+![Wagner 1996](../Figuras/wagner.png)
+
+<div class='notes'>
+o mapa genótipo-fenótipo do wagner é uma simplificação dos processos de desenvolvimento
+</div>
+
+## Dinâmica do Desenvolvimento {.centered}
+![Hallgrímsson \& Liebermann 2008](../Figuras/palimpsest.png)
+
+<div class='notes'>
+ainda que estes processos sejam localizados, sua sobreposição espacial e a dinâmica temporal inerente a eles podem afetar os padrões de covariância recuperados na população adulta
+</div>
+
+## Morfometria {.centered}
+![Como representar variação morfológica?](../Figuras/skull_clean.png)
+
+<div class='notes'>
+Pearson \& Davin (1924) introduziram a noção de que mensurações devem ser passíveis de serem replicadas em diferentes linhagens, considerando-se as homologias das estruturas consideradas
+</div>
+
+## *Landmarks* e Homologia {.centered}
+![Pearson \& Davin 1924](../Figuras/skull_lm.png)
+
+## Distâncias Lineares {.centered}
+![Cheverud 1982](../Figuras/skull_dist.png)
+
+<div class='notes'>
+definidas desta forma, as distâncias representam processos locais
+de desenvolvimento e função 
+</div>
+
+## Coordenadas Cartesianas {.centered}
+![Klingenberg 2010](../Figuras/skull_lm.png)
+
+## Coordenadas como Caracteres? {.centered}
+![](../Figuras/gm_a.png)
+
+## Análise Generalizada de Procrustes {.centered}
+![](../Figuras/gm.png)
+
+## Representações {.columns-2 .smaller}
+
+__Distâncias Lineares__
+
+<img src='../Figuras/skull_dist.png' width=400px>
+
+* representam processos locais de desenvolvimento/função;
+* confundem forma e tamanho.
+
+__CS + Resíduos de Procrustes__
+
+<img src='../Figuras/skull_lm.png' width=400px>
+
+* não representa processos locais adequadamente;
+* forma e tamanho separados.
+
+## Deformações {.centered .columns-2}
+
+![](../Figuras/growth.jpg)
+
+![D'arcy Thompson <br> _On growth and form_ (1917)](../Figuras/thompson.jpg)
+
+## Interpolações {.columns-2}
+
+<img src='../Figuras/twoshapes.png', width=400px>
+<img src='../Figuras/field.png', width=400px>
+
+<div class='notes'>
+calcular essas grades a partir de um modelo de interpolação que descreve o comportamento dos tecidos ósseos adjacentes aos landmarks
+</div>
+
+## Variáveis Locais de Forma {.centered}
+
+<img src='../Figuras/localshape.png', width=400px>
+
+Márquez _et al_ 2012
+
+<div class='notes'>
+expansões ou retrações locais
+representação elegante do ponto de vista matemático
+herda a separação de tamanho e forma da representação baseada em coordenadas
+representa processos locais de desnvolvimento e função
+</div>
+
+## Objetivo {.build}
+Investigar a relação entre:
+
+> - Representações de Variação Morfológica
+> - Covariâncias Fenotípicas em Escala Macroevolutiva
+> - Linhagem Modelo: Anthropoidea
+
+<div class='notes'>
+Investigar a relação entre as representações utilizadas para caracterizar variação morfológica e as inferências feitas a partir destas representações a respeito de estruturas de covariância em escala macroevolutiva, utilizando a linhagem dos Primatas Antropóides como modelo.
+</div>
+
+## Primatas Antropóides
+
+* $\sim$ 150 espécies;
+
+* Eoceno da Ásia ($\sim$ 60 Mya);
+
+* Dois subgrupos viventes: Catarrhini e Platyrrhini;
+
+* Dietas generalistas:
+    + linhagens divergem em relação à preferência por itens específicos;
+
+* Ampla diversidade de tamanho corporal:
+    + *Callithrix pygmaea*: $\sim$ 120*g*
+    + *Gorilla gorilla*: $\sim$ 110*kg*
+
+<div class='notes'>
+platyrrhini: intertropical das Américas
+catarrhini: áfrica subsaariana, subcontinente indiano, sudeste asiático
+</div>
+
+## Catarrhini: Cercopithecoidea
+![](../Figuras/Cercopithecoidea.png)
+
+## Catarrhini: Hominoidea
+![](../Figuras/Hominoidea.png)
+
+## Platyrrhini: Pitheciidae/Atelidae
+![](../Figuras/AtelidaePitheciidae.png)
+
+## Platyrrhini: Cebidae
+![](../Figuras/Cebidae.png)
+
+##
+```{r base_tree, echo = FALSE, fig.width = 9, fig.height = 7, fig.caption='Springer _et al_ 2012'}
+defesa.plots $ base.tree
+```
+
+# Modularity and Morphometrics: Error Rates in Hypotheses Testing
+
+- Testes de detecção de hipóteses de associação entre caracteres se mantêm consistentes dentre as diferentes representações?
+
+## Hipóteses {.columns-2}
+
+* Complexos Funcionais
+    - <font color='#f423f7'> Oral </font>
+    - <font color='#ed536a'> Nasal </font>
+    - <font color='#00f00e'> Zigomático </font>
+    - <font color='#c8ab37'> Órbita </font>
+    - <font color='#124bee'> Basicrânio </font>
+    - <font color='#00c4bd'> Abóbada </font>
+
+<img src='../Figuras/skull_func.png' width=400px>
+
+## Como testamos estas hipóteses?
+
+\[
+\mathbf{R} = \begin{bmatrix}
+	1.00 & & & \\ 
+	0.13 & 1.00 & & \\ 
+	0.38 & 0.12 & 1.00 & \\ 
+	0.39 & 0.22 & 0.39 & 1.00 \\ 
+\end{bmatrix}
+\]
+
+## Como testamos estas hipóteses?
+
+\[
+\mathbf{R} = \begin{bmatrix}
+	1.00 & & & \\ 
+	{\color{red} 0.13} & 1.00 & & \\ 
+	0.38 & 0.12 & 1.00 & \\ 
+	0.39 & 0.22 & 0.39 & 1.00 \\ 
+\end{bmatrix}
+\]
+
+&nbsp;
+
+\[
+\mathbf{H}_1 = \begin{bmatrix}
+	1 & & & \\ 
+	{\color{red}1} & 1 & & \\ 
+	0 & 0 & 1 & \\ 
+	0 & 0 & 0 & 1 \\ 
+\end{bmatrix}
+\]
+
+## Como testamos estas hipóteses?
+
+\[
+\mathbf{R} = \begin{bmatrix}
+	1.00 & & & \\ 
+	0.13 & 1.00 & & \\ 
+	0.38 & 0.12 & 1.00 & \\ 
+	0.39 & 0.22 & {\color{blue} 0.39} & 1.00 \\ 
+\end{bmatrix}
+\]
+
+&nbsp;
+
+\[
+\mathbf{H}_2 = \begin{bmatrix}
+	1 & & & \\ 
+	0 & 1 & & \\ 
+	0 & 0 & 1 & \\ 
+	0 & 0 & {\color{blue}1} & 1 \\ 
+\end{bmatrix}
+\]
+
+<div class='notes'>
+podemos estimar alguma métrica que represente a associação entre os padrões de correlação reais e a matriz de hipóteses binária
+</div>
+
+## Métricas e Representações
+
+* Métricas:
+    + MHI (Porto *et al*, 2013):
+
+\[
+\text{MHI} = \frac {\rho_d - \rho_f} {\text{ICV}}
+\]
+
+* Representações:
+    + Distâncias lineares;
+    + Resíduos de Procrustes;
+    + Variáveis Locais de Forma;
+
+* Amostra de 21 espécies.
+
+<div class='notes'>
+subamostra controlada para tamanhos amostrais e representativa de todas as linhagens
+</div>
+
+## Testes de Hipótese
+
+* $H_0$: o padrão inferido não se diferencia de uma associação entre caracteres tomados ao acaso;
+    + Significância: permutações na matriz de associação.
+
+##
+
+```{r mhi_local, echo = FALSE, fig.width = 10, fig.height = 7}
+defesa.plots $ mi.f
+```
+
+<div class='notes'>
+Dist: detectam a região Oral, mas regiões diferentes são detectadas em linhagens distintas
+PR: padrão difuso (base detectada várias vezes, onde nenhuma rep. mais detecta)
+LSV: padrão de detecção conservado em todas as linhagens
+</div>
+
+## Detecção de Hipóteses de Associação
+
+Testes de detecção de hipóteses de associação entre caracteres se mantêm consistentes dentre as diferentes representações?
+
+&nbsp;
+
+__Não!__
+
+&nbsp;
+
+* Resíduos de Procrustes não representam propriamente processos locais de desenvolvimento/função;
+
+* Os resultados obtidos a partir de Distâncias Lineares e Variáveis Locais de Forma são compatíveis, considerando-se as diferenças inerentes às duas representações.
+
+## Desenvolvimento e Modularidade {.columns-2 .smaller}
+
+<img src='../Figuras/palimpsest.png' width=360px>
+
+__Distâncias Euclidianas__
+
+- Crescimento Somático 
+
+__Variáveis Locais de Forma__
+
+- Interações Músculo-Osso
+- Crescimento do Cérebro
+
+<div class='notes'>
+dist: representam o processo mais tardio no desenvolvimento (interações músculo osso) devido à sobrerepresentação da variação de tamanho sobre a variação de forma
+
+lsv: representam ao menos dois processos distintos
+</div>
+
+## Poder dos Testes {.centered}
+
+```{r modsim_defesa, fig.width = 8, fig.height = 5, echo = FALSE}
+defesa.plots $ cor.wb
+```
+
+<div class='notes'>
+Simulações de padrões de correlação a partir das distr. de correlações dentro e entre regiões
+
+devido à diferença entre estas duas distr., eu vou ter mais poder para discernir correlações dentro e entre módulos nas distâncias lineares e lsv
+</div>
+
+# Intromissão
+
+Efeito de Seleção Direcional sobre Covariâncias Genéticas
+
+## Erosão de Variação Genética {.centered}
+![Arnold 1992](../Figuras/erosion01.png)
+
+## Erosão de Variação Genética {.centered}
+![Arnold 1992](../Figuras/erosion02.png)
+
+## Erosão de Variação Genética {.centered}
+![Arnold 1992](../Figuras/erosion03.png)
+
+## Pleiotropia Epistática {.centered .smaller}
+![](../Figuras/pleioepis.png)
+\[
+\mathbf{R}_{aa} =
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}
+\qquad
+\mathbf{R}_{Aa} =
+\begin{bmatrix}
+1 & 0.5 \\
+0.5 & 1 \\
+\end{bmatrix}
+\qquad
+\mathbf{R}_{AA} =
+\begin{bmatrix}
+1 & 0.7 \\
+0.7 & 1 \\
+\end{bmatrix}
+\]
+
+Wagner _et al_ 2007
+
+<div class='notes'>
+resultados experimentais indicam a existência de pleio epis, e as consequências da existência destas interações foi availada do ponto de vista teórico
+</div>
+
+## Pleiotropia Epistática {.centered}
+![](../Figuras/eruption01.png)
+
+## Pleiotropia Epistática {.centered}
+![](../Figuras/eruption02.png)
+
+## Pleiotropia Epistática {.centered}
+![](../Figuras/eruption03.png)
+
+## Seleção para Tamanho em Platyrrhini {.centered}
+![Marroig _et al_ 2012](../Figuras/sel_NWM.png)
+
+
+## Seleção sobre Forma em Homininae {.centered}
+
+![Schroeder _et al_ 2014](../Figuras/sel_earlyhomo.png)
+
+
+<div class='notes'>
+na divergência entre australopithecini e hominini, a linhagem que dá origem a Homo sofreu 
+Seleção para redução dos elementos faciais e aumento da capacidade do neurocrânio.
+</div>
+
+# The Evolution of Skull Allometry in Anthropoid Primates {.smaller}
+
+- Estes eventos de seleção mudaram as relações entre tamanho e forma nos Antropóides?
+
+- Mudanças nestas relações implicam em alterações nos padrões de modularidade estimados sobre distâncias lineares?
+
+## Alometria {.centered}
+![](../Figuras/allo01.png)
+
+<div class='notes'>
+pode representar essa relação em pops, sps, ou inds (POPS)
+</div>
+
+## Alometria {.centered}
+
+![](../Figuras/allo02.png)
+
+\[ \log x = a \log m + b \]
+
+## Alometria e Desenvolvimento {.centered}
+
+![](../Figuras/palimpsest.png)
+
+<div class='notes'>
+Taxas de desenvolvimento e coordenação dos diferentes processos
+</div>
+
+## Modelo
+
+* Tamanho: *logCS*;
+
+* Forma: Componente Alométrico Comum (*CAC*)
+      + variação de forma alométrica ancestral;
+      + variaveis locais de forma;
+
+## Regressão Hierárquica
+
+* Estimativas de interceptos e inclinações dentro de cada linhagem;
+
+* Considera-se as relações filogenéticas;
+
+* Intervalos de credibilidade para ambos os parâmetros;
+    + Compara-se estes intervalos em cada linhagem com o intervalo obtido para o nó basal.
+
+## {.centered}
+```{r logcs_cac, echo = FALSE, fig.width = 11, fig.height = 8}
+defesa.plots $ CAC.logCS
+```
+
+<div class='notes'>
+intercepto: elevação na média do CS
+inclinação: incremento no CAC por d.p. do CS
+Callithrichinae: rostro proeminente em relação ao seu tamanho
+</div>
+
+## {.centered}
+
+```{r inter, echo = FALSE, fig.width = 9, fig.height = 7}
+Tree.Plots $ inter.tree
+```
+
+## {.centered}
+
+```{r slope, echo = FALSE, fig.width = 9, fig.height = 7}
+Tree.Plots $ slope.tree
+```
+
+## Modularidade {.smaller}
+
+* Regressão de MHIs contra parâmetros alométricos;
+    + MHIs estimados sobre as matrizes de covariância entre distâncias lineares;
+
+&nbsp;
+
+<div class='columns-2'>
+
+* Seleção de Modelos
+    + intercepto;
+    + inclinação;
+    + intercepto e inclinação.
+
+<img src='../Figuras/skull_dev.png' width=400px>
+
+</div>
+
+## Alometria e Modularidade
+
+```{r mhi_is, echo = FALSE, fig.width = 8, fig.height=4}
+allo.Plots $ MI.vs.Wslope.main
+```
+
+Modelos com inclinação como única variável preditora são favorecidos pela seleção de modelos.
+
+## Alometria e Modularidade
+
+Eventos de seleção mudaram as relações entre tamanho e forma nos Antropóides?
+
+__Em alguns casos:__
+
+* Callithrichinae + Aotinae: interceptos elevados
+    + redução nas taxas de desenvolvimento pré-natal em relação aos demais Platyrrhini
+
+* _Homo_/_Gorilla_: inclinações reduzidas
+    + _Homo_: seleção direcional alterou as relações alométricas, possivelmente associada a seleção estabilizadora sobre tamanho.
+
+## Alometria e Modularidade
+
+Mudanças nestas relações implicam em alterações nos padrões de modularidade estimados sobre distâncias lineares?
+
+__Sim!__ Com efeitos opostos sobre a Face e o Neurocrânio.
+
+# A Phylogenetic Analysis of Shape Covariance Structure
+
+## Comparação de Covariâncias Fenotípicas {.smaller}
+
+* Estabilidade dos padrões de covariância em Anthropoidea:
+    + Marroig \& Cheverud 2001 - Platyrrhini
+    + Oliveira _et al_ 2009 - Catarrhini
+
+A partir de uma representação de forma, esta estabilidade de padrões se mantém?
+
+* variáveis locais de forma e logCS (Alometria);
+
+* comparação explicitamente embasada nas relações filogenéticas;
+
+* informada a respeito das hipóteses de desenvolvimento e função.
+
+## Hipótese {.smaller}
+
+Divergência em covariâncias entre linhagens-irmãs vão apresentar um padrão consistente com interações ontogenéticas e funcionais.
+
+<div class='columns-2'>
+
+  - <font color='#f423f7'> Oral </font>
+  - <font color='#ed536a'> Nasal </font>
+  - <font color='#00f00e'> Zigomático </font>
+  - <font color='#c8ab37'> Órbita </font>
+  - <font color='#124bee'> Basicrânio </font>
+  - <font color='#00c4bd'> Abóbada </font>
+
+
+<img src='../Figuras/skull_func.png', width=400px>
+
+</div>
+
+## Abordagens para Comparação
+
+__Decomposição de Diversidade__
+
+![Pavoine _et al_ 2010](../Figuras/matrixdisp.png)
+
+## Abordagens para Comparação
+
+__Decomposição de Diversidade__
+
+* Testes de Hipótese:
+    + Apenas um nó corresponde à maior parte da diversidade;
+    + Alguns nós contribuem em maior peso à diversidade;
+    + Diversidade acumulada na base ou no topo da filogenia;
+
+* $H_0$: Diversidade distribuída ao acaso ao longo da filogenia;
+    + Distribuição nula gerada a partir de permutações.
+
+<div class='notes'>
+Mas, esse teste não indica quais caracteres representados nas matrizes influenciam a divergência entre linhagens. Então, para avaliar esse aspecto,
+</div>
+
+## Abordagens para Comparação
+
+__Caracterização de Variação em Matrizes de Covariância__
+
+![Hine _et al_ 2009](../Figuras/matrixspace.png)
+
+## Abordagens para Comparação
+
+__Caracterização de Variação em Matrizes de Covariância__
+
+![Jombart _et al_ 2010](../Figuras/ppca.png)
+
+## Abordagens para Comparação
+
+__Caracterização de Variação em Matrizes de Covariância__
+
+![](../Figuras/limits.png)
+
+## Comparando Limites
+
+* Decomposição de Resposta à Seleção (Marroig _et al_ 2011):
+    + indica quais caracteres divergem em relação à estrutura de covariância;
+    + aplicados sobre a variação de cada eixo obtido da pPCA.
+
+## 
+
+```{r ppca, echo = FALSE, warning = FALSE, message = FALSE, fig.width = 9, fig.height = 7}
+defesa.plots $ ppca.tree.real
+```
+
+## Decomposição de Resposta à Seleção {.centered}
+
+```{r srd_gl, echo = FALSE, fig.width = 7.5, fig.height = 5, warning = FALSE, message = FALSE}
+post.ppca $ plot.srd.gl12 +
+  scale_color_brewer(name = 'Region',
+                     labels = c('Size', 'Oral', 'Oral/Nasal', 'Nasal', 'Zygomatic',
+                       'Orbit', 'Base', 'Vault'),
+                     palette = 'Dark2')
+```
+
+## Comparação entre Covariâncias Fenotípicas {.smaller}
+
+A partir de uma representação de forma, esta estabilidade de padrões se mantém?
+
+__Sim.__ Divergência em covariâncias entre linhagens-irmãs apresentam um padrão consistente com interações ontogenéticas/funcionais.
+
+* Algumas regiões mantêm quase constantes seus padrões de covariância:
+    + Oral, Nasal, Abóbada;
+
+* Outras regiões consistentemente mudam ao longo da diversificação do grupo:
+    + _logCS_, Basicrânio, Órbita.
+
+<div class='columns-2'>
+
+<img src='../Figuras/skull_func.png', width=300px>
+
+<img src='../Figuras/skull_dev.png', width=300px>
+
+</div>
+
+<div class='notes'>
+
+regiões instáveis são aquelas que sofrem intereferência dos dois tecidos precursores
+
+logCS: changes in allometric relationships (post-natal stages)
+
+</div>
+
+## Conclusões
+
+* Considerar diferentes representações e suas relações traz novas perspectivas à associação entre estruturas de covariância e processos de desenvolvimento e função;
+
+* Apesar de tamanho e forma poderem ser separados do ponto de vista analítico, seus efeitos conjuntos não deveriam ser descartados;
+
+* Sob diferentes perspectivas, os padrões de covariância em Anthropoidea se mostram estáveis.
+
+## Agradecimentos {.centered}
+
+<img src='../Figuras/thx.svg' width = 600px>
+
+# Obrigado!
+
+<img src='../Figuras/end.jpg' width=350px align='right'>
+

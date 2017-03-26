@@ -1,0 +1,5 @@
+require(knitr)
+require(rmarkdown)
+
+render('02 Homologias, Caracteres e Mensurações/index.Rmd',
+       output_dir = '02 Homologias, Caracteres e Mensurações/')
