@@ -2,7 +2,7 @@
 title: "Homologias, Caracteres e Mensurações"
 subtitle: "592.5906 - Aula 2"
 author: "Guilherme Garcia"
-date: 04.04.2017
+date: 04 de Abril de 2017
 output:
   ioslides_presentation:
     transitions: faster
