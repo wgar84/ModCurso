@@ -36,7 +36,6 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 + Leituras complementares: 
   
   * Bowler, P. “Variation from Darwin to the Modern Synthesis.” *In* Variation: A Central Concept in Biology, 2003. 
-
   
   * Klingenberg, C P. “Morphological Integration and Developmental Modularity.” Annual Review of Ecology, Evolution, and Systematics 39, no. 1 (2008): 115–132. doi:10.1146/annurev.ecolsys.37.091305.110054.
 
@@ -60,20 +59,29 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Wagner, G. P., M. D. Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
 
-**Aula 5**: *Caracterização de variação em dimensionalidade alta*
+**Aula 3**: *Caracterização de variação em dimensionalidade alta*
 + Caracteres e matrizes
 + Modelos lineares
 + Componentes principais
 + Caracterização de variação direcional
 
-**Aula 6**: *Paisagem adaptativa fenotípica*
+**Aula 4**: 'Detecção de Padrões de Modularidade'
+
++ Leituras Principais
+
+  * Cheverud, J. M., G. P. Wagner, M. M. Dow. “Methods for the Comparative Analysis of Variation Patterns.” Evolution 38, no. 3 (1989): 201–213.
+
+  * Goswami, A., J. A. Finarelli. “EMMLi: A Maximum Likelihood Approach to the Analysis of Modularity.” Evolution 70, no. 7 (July 1, 2016): 1622–37. doi:10.1111/evo.12956.
+
+
+**Aula 5**: *Paisagem adaptativa fenotípica*
 + Fenótipo e seleção
 + Superfícies adaptativas individuais e populacionais
 + Modelos lineares e estimativas de seleção
 + Os 3 tipos de &#x03B2; (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
 + Matriz &#x03B3;
 
-**Aula 7**: *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
+**Aula 6**: *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
 
 + Leituras principais:
 
