@@ -1,8 +1,8 @@
 ---
 title: "Homologias, Caracteres e Mensurações"
-subtitle: "592.5906 - Aula 2"
-author: "Guilherme Garcia"
-date: 04 de Abril de 2017
+subtitle: "Modularidade: conectando padrões e processos em evolução multivariada"
+author: Guilherme Garcia
+logo: ../../logo.png
 output:
   ioslides_presentation:
     transitions: faster
@@ -16,28 +16,52 @@ bibliography: /home/guilherme/Dropbox/Global/tudo.bib
 ---	
 
 <style>
-@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Source+Code+Pro:500|Open+Sans|Oswald);
-</style>
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Lora:700|Open+Sans+Condensed:300');
 
-<style type='text/css'>
+slides > slide:not(.nobackground):after {
+    font-family: 'Crimson Text';
+}
+
+.forceBreak { 
+	-webkit-column-break-after: always; 
+	break-after: column; 
+}
+
+div.footnotes {
+  position: absolute;
+  bottom: 0;
+  margin-left: 50px;
+  margin-bottom: 10px;
+  width: 80%;
+  font-family: 'Crimson Text';
+  font-size: 0.6em;
+}
+
 img {
     max-height: 560px;
     max-width: 964px;
 }
 </style>
 
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  $('slide:not(.backdrop):not(.title-slide)').append('<div class=\"footnotes\">');
+  $('footnote').each(function(index) {
+    var oldChars = $(this).html();
+    var fnNum    = (index+1).toString().sup();
+    var newChars = oldChars + fnNum;
+    $(this).html(newChars);
+   	var content = fnNum + ': ' + $(this).attr('content') + '<br/>';
+	var oldContent = $(this).parents('slide').children('div.footnotes').html();
+    var newContent = oldContent + content;
+    $(this).parents('slide').children('div.footnotes').html(newContent);
+  });
+});
 </script>
 
-## Conteúdo
 
-* Caracteres
+# Objetivos {.objs}
 
-* Homologias
-    + Marcos Anatômicos
-
-* Mensurações
-
-
-
+> - 

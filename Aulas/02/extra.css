@@ -1,57 +1,72 @@
 slides > slide.title-slide hgroup h1 {
-  font-family: 'Open Sans Condensed';
+  font-family: 'Lora';
   font-weight: normal;
-  font-size: 38pt;
-  color: #E0E0E0;
-  transform: translate(-5%, -20%);
+  font-size: 34pt;
+  color: #303030;
+  transform: translate(-5%, -40%);
+  top: 100%;
+  left: 100%;
+}
+
+.objs h1,
+.objs h2,
+.objs li,
+.objs p {
+    color: #C0C0C0;
+}
+
+slides > slide.title-slide hgroup h2 {
+  font-family: 'Open Sans Condensed';
+  font-size: 22pt;
+  color: #A0A0A0;
+  transform: translate(7%, -42%);
   top: 100%;
   left: 100%;
 }
 
 .title-slide {
-    background-color: #222222;
-    font-family: 'Open Sans';
-    font-size: 20pt;
+    font-family: 'Crimson Text';
 }
 
 slide h2{
- font-family: 'Open Sans Condensed';
- font-weight: 700;
- font-size: 36pt;
- color: darkslategray;
+    font-family: 'Lora';
+    font-size: 32pt;
+    color: #303030;
 }
 
-slide h1{
-    background: #222222;
-    font-family: 'Open Sans Condensed';
-    font-weight: 700;
-    font-size: 30pt;
-    color: darkslategray;
+slide {
+    background: #FFFFFB;
 }
 
-body {
-    font-family: 'Helvetica';
-    font-size: 20pt;
-    color: black;
+article p, article li, article li.build, section p, section li{
+  font-family: 'Crimson Text';
+  font-size: 22pt;
+  line-height: 1.5em;
+  color: #202020;
 }
+
+
+
+
+MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
 
 aside.gdbar {
-  height: 97px;
+  height: 120px;
   width: 215px;
   position: absolute;
   left: -1px;
   top: 50px;
-  -webkit-border-radius: 0 10px 10px 0;
+  -webkit-border-radius: 0 100px 10px 0;
   -moz-border-radius: 0 10px 10px 0;
   -ms-border-radius: 0 10px 10px 0;
   -o-border-radius: 0 10px 10px 0;
   border-radius: 0 10px 10px 0;
-  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #e6e6e6), color-stop(100%, #e6e6e6)) no-repeat;
-  background: -webkit-linear-gradient(left, #e6e6e6, #e6e6e6) no-repeat;
-  background: -moz-linear-gradient(left, #e6e6e6, #e6e6e6) no-repeat;
-  background: -o-linear-gradient(left, #e6e6e6, #e6e6e6) no-repeat;
-  background: -ms-linear-gradient(left, #e6e6e6, #e6e6e6) no-repeat;
-  background: linear-gradient(left, #e6e6e6, #e6e6e6) no-repeat;
+  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #e0e0e0), color-stop(100%, #e0e0e0)) no-repeat;
+  background: -webkit-linear-gradient(left, #e0e0e0, #e0e0e0) no-repeat;
+  background: -moz-linear-gradient(left, #e0e0e0, #e0e0e0) no-repeat;
+  background: -o-linear-gradient(left, #e0e0e0, #e0e0e0) no-repeat;
+  background: -ms-linear-gradient(left, #e0e0e0, #e0e0e0) no-repeat;
+  background: linear-gradient(left, #e0e0e0, #e0e0e0) no-repeat;
   -webkit-background-size: 0% 100%;
   -moz-background-size: 0% 100%;
   -o-background-size: 0% 100%;
@@ -92,8 +107,8 @@ aside.gdbar.bottom {
 }
 /* line 913, ../scss/default.scss */
 aside.gdbar img {
-  width: 85px;
-  height: 85px;
+  width: 105px;
+  height: 105px;
   position: absolute;
   right: 0;
   margin: 8px 15px;
