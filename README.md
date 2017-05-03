@@ -65,7 +65,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 + Componentes principais
 + Caracterização de variação direcional
 
-**Aula 4**: 'Detecção de Padrões de Modularidade'
+**Aula 4**: *Detecção de Padrões de Modularidade*
 
 + Leituras Principais
 
