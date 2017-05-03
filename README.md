@@ -39,6 +39,9 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 	
   * Zelditch, M. L., and D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” In Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
+  * Young, N M, and B Hallgrímsson. “Serial Homology and the Evolution of Mammalian Limb Covariation Structure.” Evolution 59, no. 12 (2005): 2691–2704.
+
+
 **Aula 2**: *Homologias, Caracteres e Mensurações*
 
 + Leituras principais:

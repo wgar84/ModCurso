@@ -45,11 +45,6 @@ article p, article li, article li.build, section p, section li{
   color: #202020;
 }
 
-
-
-
-MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
-
 aside.gdbar {
   height: 120px;
   width: 215px;

@@ -2,6 +2,7 @@
 title: "Homologias, Caracteres e Mensurações"
 subtitle: "Modularidade: conectando padrões e processos em evolução multivariada"
 author: Guilherme Garcia
+date: wgar@usp.br
 logo: ../../logo.png
 output:
   ioslides_presentation:
@@ -45,6 +46,10 @@ img {
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["color.js"] }});
+</script>
+
 <script>
 $(document).ready(function() {
   $('slide:not(.backdrop):not(.title-slide)').append('<div class=\"footnotes\">');
@@ -65,3 +70,34 @@ $(document).ready(function() {
 # Objetivos {.objs}
 
 > - 
+
+> - 
+
+## Homologias {.columns-2}
+* Relações de equivalência entre atributos em espécies distintas
+
+    > + Revelam origens evolutivas em comum
+
+    > + Relação global entre atributos
+
+<p class='forceBreak'> </p>
+
+<div class='centered'>
+<img src='../Figuras/../../../Figuras/Homology.jpg' height=470px>
+</div>
+
+## Homologias {.centered}
+![(Tulenko *et al.*, <footnote content = 'Scientific Reports 6:22720 (doi 10.1038/srep22720)'>2016</footnote>)](../../../Figuras/forelimb_phylo.png)
+
+## Homologias {.centered}
+![](../../../Figuras/gpmap_homology_1.png)
+
+## Homologias {.centered}
+![](../../../Figuras/gpmap_homology_2.png)
+
+## Homologias {.centered}
+![](../../../Figuras/forelimb_phylo.png)
+
+## Homologias {.centered}
+![](../../../Figuras/forelimb_phylo_func.png)
+
