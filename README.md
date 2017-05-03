@@ -35,28 +35,30 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 + Leituras complementares: 
   
+  * Bowler, P. “Variation from Darwin to the Modern Synthesis.” *In* Variation: A Central Concept in Biology, 2003. 
+
+  
   * Klingenberg, C P. “Morphological Integration and Developmental Modularity.” Annual Review of Ecology, Evolution, and Systematics 39, no. 1 (2008): 115–132. doi:10.1146/annurev.ecolsys.37.091305.110054.
-	
-  * Zelditch, M. L., and D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” In Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
-  * Young, N M, and B Hallgrímsson. “Serial Homology and the Evolution of Mammalian Limb Covariation Structure.” Evolution 59, no. 12 (2005): 2691–2704.
+  * Young, N. M., B. Hallgrímsson. “Serial Homology and the Evolution of Mammalian Limb Covariation Structure.” Evolution 59, no. 12 (2005): 2691–2704.
 
+  * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
 **Aula 2**: *Homologias, Caracteres e Mensurações*
 
 + Leituras principais:
 
-  * Wagner, G P. “What Is ‘homology thinking’ and what is it for?” Journal of Experimental Zoology Part B: Molecular and Developmental Evolution 326, no. 1 (2016): 3–8. doi:10.1002/jez.b.22656.
+  * Wagner, G. P. “What Is ‘homology thinking’ and what is it for?” Journal of Experimental Zoology Part B: Molecular and Developmental Evolution 326, no. 1 (2016): 3–8. doi:10.1002/jez.b.22656.
 
-  * Houle, D, C Pélabon, G P Wagner, and T F Hansen. “Measurement and Meaning In Biology.” The Quartely Review of Biology 86, no. 1 (2011): 3–34.
+  * Houle, D., C. Pélabon, G. P. Wagner, T. F. Hansen. “Measurement and Meaning In Biology.” The Quartely Review of Biology 86, no. 1 (2011): 3–34.
     
 	* Ler do início até a seção “Pragmatic Measurement Theory” (13 páginas).
 
 + Leituras complementares:
   
-  * Hansen, T F, D Houle. “Measuring and Comparing Evolvability and Constraint in Multivariate Characters.” Journal of Evolutionary Biology 21, no. 5 (2008): 1201–1219. doi:10.1111/j.1420-9101.2008.01573.x.
+  * Hansen, T. F., D. Houle. “Measuring and Comparing Evolvability and Constraint in Multivariate Characters.” Journal of Evolutionary Biology 21, no. 5 (2008): 1201–1219. doi:10.1111/j.1420-9101.2008.01573.x.
 
-  * Wagner, G P, M D Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
+  * Wagner, G. P., M. D. Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
 
 **Aula 5**: *Caracterização de variação em dimensionalidade alta*
 + Caracteres e matrizes
