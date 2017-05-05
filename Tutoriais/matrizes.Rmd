@@ -1,0 +1,387 @@
+---
+title: "Estimando matrizes e componentes principais"
+author: "Diogo Melo"
+date: "October 12, 2016"
+output:
+  html_document:
+    highlight: tango
+    number_sections: yes
+    theme: flatly
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Objetivos
+
+Nessa aula vamos explorar a associação presente entre os caracteres fenotípicos nas nossas populações.
+Com isso vamos poder discutir questões ligadas a função, desenvolvimento e a interação das populações com a seleção natural.
+
+Para isso, vamos calcular:
+
+ 1. A matriz de covariância fenotípica total;
+ 2. A matriz de covariância fenotípica por espécie;
+ 3. A matriz de correlação por espécie;
+
+Além disso, discutir:
+
+ 1. Qual o padrão modular de cada espécie? 
+ 2. Qual é a intensidade da associação entre os caractéres em cada espécie?
+ 
+## Covariâncias e correlações
+
+Para entender como a associação entre os caracteres muda entre espécies, é preciso quantifica-lá. Para isso, vamos utilizar os conceitos de covariância e correlação. A covariância entre duas variáveis é definida como a média do produto dos desvios das médias das variáveis. Ou seja, se $\overline x$ e $\overline y$ são as médias dos caracteres $x$ e $y$, a covariâncias entre eles numa população é:
+
+$$
+Cov(x, y) = \frac{1}{N} \sum_{i = 1}^{N} (x_i - \overline{x})(y_i - \overline y)
+$$
+
+Para que possamos entender essa formula intuitivamente, vamos pensar nos sinais de cada termo da soma. Em que condições o termo $(x_i - \overline{x})(y_i - \overline y)$ é positivo e contribui pra aumentar a covariância? E quando ele é negativo? Como esse termo é um produto de desvios, o produto vai ser positivo quando os dois desvios tiverem o mesmo sinal, e negativo quando os desvios tiverem sinais diferentes. Ou seja: quando tanto o caráter $x$  quando o $y$ estiverem acima ou abaixo das suas médias, o produto é positivo e contribui pra aumentar a covariância; quando $x$ é menor do que a média e $y$ é maior, ou vice-versa, o produto é negativo e contribui para diminuir a covariância. Se, ainda, os desvios não tiverem relação nenhuma, desvios na mesma direção e em direções opostas tendem a se cancelar, e a covariação será
+próxima de zero. Isso está ilustrado na figura abaixo, indivíduos nas regiões em azul aumentam a covariância, enquanto indivíduos na região em amarelo diminuem a covariância.
+
+```{r, echo = FALSE, warning=FALSE, message=FALSE }
+set.seed(42)
+library(ggplot2)
+library(mvtnorm)
+data = data.frame(rmvnorm(50, sigma = 0.8*matrix(c(1, 0.7, 0.7, 1), 2)))
+ggplot(data, aes(X1, X2)) + 
+   annotate("rect", xmin = Inf, xmax = 0, ymin = Inf, ymax = 0, fill= "blue", alpha = 0.5)  + 
+   annotate("rect", xmin = -Inf, xmax = 0, ymin = -Inf, ymax = 0 , fill= "blue", alpha = 0.5) + 
+   annotate("rect", xmin = 0, xmax = Inf, ymin = 0, ymax = -Inf, fill= "yellow", alpha = 0.5) + 
+   annotate("rect", xmin = 0, xmax = -Inf, ymin = Inf, ymax = 0, fill= "yellow", alpha = 0.5) + 
+   geom_point() + theme_classic() + xlim(-2,2)+ ylim(-2,2) + labs(x = "x", y = "y")
+```
+
+As covariâncias entre caracteres são quantidades muito importantes na biologia evolutiva, como vamos ver mais adiante no curso. Apesar disso, elas sofrem do mesmo problema das variâncias: dependem da escala absoluta dos caracteres sendo medidos. Assim, não podemos comparar covariâncias entre pares de caracteres que tenham escalas diferentes, e não podemos comparar as covariâncias entre os mesmo caracteres medidos em organismos que tenham escalas diferentes. Para isso, vamos definir uma segunda medida de associação que e admensional, e que pode ser comparada entre escalas: a correlação linear. Note que se medirmos a covariância de um caráter com ele mesmo, chegamos na formula da variância. A partir disso, é fácil mostrar que o valor mais alto que uma covariância pode assumir é o produto dos desvios padrão entre as variâveis medidas (afinal, a covariância máxima de um caráter é com ele mesmo, ou seja, sua variância, que é o desvio padrão ao quadrado). Então, vamos definir a correlação como a proporção da covariância máxima entre dois caracteres, ou a covariância dividido pelo produto dos desvios padrão: 
+
+$$
+Cor(x, y) = \frac{Cov(x, y)}{\sigma_x \sigma_y} = \frac{1}{N} \sum_{i = 1}^{N} \frac{(x_i - \overline{x})(y_i - \overline y)}{\sigma_x \sigma_y}
+$$
+
+Essa quantidade varia entre -1 e 1, e mede o grau de associação entre duas variáveis numa escala absoluta. Correlações próximas de 1 indicam que os caracteres variam juntos e na mesma direção; correlações próximas de -1 indicam que os caracteres variam juntos mas em direções opostas; correlações próximas de zero indicam que os caracteres são independentes. A correlação pode ser comparada entre caracteres e populações diferentes. 
+
+## Medindo covariâncias e correlações no R
+
+Primeiro vamos carregar os dados:
+
+```{r}
+# Carregando o pacote evolqg
+if(!require(evolqg)){install.packages("evolqg"); library(evolqg)}
+data(dentus)
+```
+
+Agora vamos utilizar a função cov para calcular a covariância entre um par de caracteres:
+
+```{r}
+cov(dentus$humerus, dentus$ulna)
+```
+
+__Pergunta__: Esse valor de covariância é alto ou baixo? 
+
+__Resposta__: Não faço a mais parva ideia! A covariância depende da escala! Vamos olhar para a correlação (usando a função cor), que tem escala absoluta.
+
+```{r}
+cor(dentus$humerus, dentus$ulna)
+```
+
+Esse é um valor próximo de 1, indicando alta associação entre as duas variáveis. Podemos ver isso num gráfico bivariado:
+
+```{r, warning=FALSE, message=FALSE }
+set.seed(42)
+library(ggplot2)
+library(mvtnorm)
+ggplot(dentus, aes(humerus, ulna)) + 
+   annotate("rect", xmin = Inf, xmax = mean(dentus$humerus), 
+            ymin = Inf, ymax = mean(dentus$ulna), fill= "blue", alpha = 0.5)  + 
+   annotate("rect", xmin = -Inf, xmax = mean(dentus$humerus), 
+            ymin = -Inf, ymax = mean(dentus$ulna) , fill= "blue", alpha = 0.5) + 
+   annotate("rect", xmin = mean(dentus$humerus), xmax = Inf, 
+            ymin = mean(dentus$ulna), ymax = -Inf, fill= "yellow", alpha = 0.5) + 
+   annotate("rect", xmin = mean(dentus$humerus), xmax = -Inf, 
+            ymin = Inf, ymax = mean(dentus$ulna), fill= "yellow", alpha = 0.5) + 
+   geom_point() + theme_classic()
+```
+
+A grande maioria dos pontos fica na região azul.
+
+## Medindo várias covariâncias no R
+
+Para que possamos comparar e interpretar a covariância ou correlação entre vários pares de caracteres simultaneamente, vamos utilizar uma notação matricial. Numa matriz de variância-covariância (ou simplesmente matriz de covariância), podemos representar todos os caracteres nas linhas e colunas, e assim, para saber a covariância entre um par de caracteres basta consultar a linha correspondente ao primeiro caráter na coluna correspondente ao segundo caráter. Para um conjunto de $p$ caracteres $\{z_1, z_2, ..., z_p\}$, podemos excrever sua matriz de covariância como:
+
+$$
+\begin{matrix}
+Var(z_1) & Cov(z_1, z_2) & \cdots & Cov(z_1, z_p) \\
+Cov(z_1, z_2) & Var(z_2) & \cdots & Cov(z_2, z_p) \\
+\vdots & \vdots  & \ddots & \vdots                \\
+Cov(z_1, z_p) & Cov(z_1, z_p) & \cdots & Var(z_p) \\
+\end{matrix}
+$$
+
+No R, basta chamar a função cov num objeto com mais de uma coluna:
+
+```{r}
+cov(dentus[,1:4])
+```
+
+Essa é a matriz de covariância total (sem separação por espécie) dos nossos dados. Onde está o valor de covariância entre humero e ulna que calculamos antes? Esse valor aparece quantas vezes na matriz? Por que? Você consegue calcular agora a matriz de correlação total? Tem um jeito fácil (função cor), um médio (função cov2cor), e um difícil (na unha)!
+
+## Medindo covariâncias de cada espécie
+
+Agora vamos medir as covariâncias e correlações dentro de cada espécie. Para isso, vamos aprender a escolher apenas algumas linhas de uma tabela de dados no R. Suponha que eu queira ver apenas as linhas que sejam da espécie A. Posso fazer isso com o comando:
+
+```{r, eval = FALSE}
+dentus[ dentus$species == "A", ]
+```
+
+Podemos agora usar esse conjunto de dados reduzido para calcular a matriz da espécie A, e armazenar a matriz num objeto chamado cov_A:
+
+```{r}
+(cov_A = cov(dentus[ dentus$species == "A", 1:4]))
+```
+
+Siga essa mesma lógica e crie objetos para as matrizes de covariância e correlação de todas as espécies.
+
+## Visualizando correlações
+
+Podemos utilizar as matrizes de correlação para fazer representações gráficas da relação entre os pares de caracteres. Vamos carregar um pacote que faça isso:
+
+```{r, message=FALSE}
+if(!require(superheat)) install.packages("superheat"); library(superheat)
+```
+
+Agora podemos usar esse pacote para plotar a matriz de correlação de uma das espécies:
+
+```{r}
+cor_A = cor(dentus[ dentus$species == "A", 1:4])
+superheat(cor_A, X.text = round(cor_A, 2))
+```
+
+Olhe para todas as matrizes de correlação. Quais são os padrões modulares? Como esses padrões diferem entre as espécies? 
+
+## Componentes principais
+
+A tecnica de componentes princiais (também conhecida como principal component analysis ou PCA) consiste em encontrar eixos ortogonais (com angulo de 90 graus entre eles) nos quais as variáveis medidas são não correlacionadas. Em outras palavras, nós descrevemos os individuos das nossas populações usando eixos relacionados às medidas tomadas em cada individuo, então um eixo corresponde ao comprimento do humero, outro eixo ao comprimento da ulna e assim por diante. Mas nesses eixos, que tem uma interpretação biológica clara, as medidas dos individuos em cada eixo são correlacionadas. 
+
+### Mudando os eixos
+
+A analise de componentes principais consiste em encontrar eixos, criados a partir dos eixos originais, nos quais os individuos não são correlacionados. Antes de chegar nos componentes principais, vamos entender o que significa mudar os dados de eixos. Podemos ter, por exemplo, um eixo definido como uma combinação entre humero e ulna, e outro eixo correspondente à diferença entre humero e ulna. Vamos visualizar isso graficamente em duas dimensões, primeiro representando nos eixos originais as medidas de humero e ulna da espécie A. Vamos centralizar as medidas no zero para facilitar o gráfico, de modo que os valores nos eixos x e y vão ser diferenças das médias:
+
+```{r, warning=FALSE, message=FALSE }
+if(!require(evolqg)){install.packages("evolqg"); library(evolqg)}
+data(dentus)
+
+library(ggplot2)
+# Separando e centralizando os dados da espécie A
+dentus_A = as.data.frame(scale(dentus[dentus$species == "A",1:4], scale = FALSE))
+
+# Plot de humero por ulna. Note que as duas medidas são correlacionadas 
+cor(dentus$humerus, dentus$ulna)
+ggplot(dentus_A, aes(humerus, ulna)) + geom_point() + coord_fixed() + theme_bw()
+```
+
+Vamos agora incluir esses dois novos eixos hipotéticos, um na direção de aumento de humero e ulna (em azul), e um na direção de aumento de humero e diminuição de ulna (em vermelho). 
+
+```{r, warning=FALSE, message=FALSE }
+ggplot(dentus_A, aes(humerus, ulna)) + geom_point() + coord_fixed() + geom_abline(intercept = 0, slope = 1, color = "blue", linetype = "dashed") + geom_abline(intercept = 0, slope = -1, color = "red", linetype = "dashed") + geom_segment(x = 0, y = 0, xend = 1, yend = 1, arrow = arrow(length = unit(0.03, "npc")), color = "blue") + geom_segment(x = 0, y = 0, xend = 1, yend = -1, arrow = arrow(length = unit(0.03, "npc")), color = "red") + theme_bw()
+```
+
+Podemos calcular as medidas de cada inviduo (scores) nesses novos eixos projetando os pontos. Para isso, temos que achar o ponto nas retas coloridas que seja o mais próximo do ponto a ser projetado. Isso envolve um pouco de trigonometria, mas vamos usar essa função que encontra o ponto numa reta mais próximo de um ponto qualquer. Eu mantive o código aqui a titulo de curiosidade, não precisam se preocupar com ele:
+
+```{r}
+# A reta é definida pelos pontos p_0 e p_1, e o ponto fora da reta é o q
+pontoMaisProximo <- function(q, p_0, p_1){
+  A = matrix(c(p_1[1] - p_0[1], p_1[2] - p_0[2],
+               p_0[2] - p_1[2], p_1[1] - p_0[1]), byrow = TRUE, ncol = 2)
+  b = -1*c(-1*  q[1]*(p_1[1] - p_0[1]) -   q[2]*(p_1[2] - p_0[2]),
+           -1*p_0[2]*(p_1[1] - p_0[1]) + p_0[1]*(p_1[2] - p_0[2]))
+  return(c(q, solve(A, b)))
+}
+projecoes_blue = data.frame(t(apply(dentus_A[,1:2], 1, pontoMaisProximo, c(0, 0), c(1, 1))))
+names(projecoes_blue) = c("x1", "y1", "x2", "y2")
+projecoes_red = data.frame(t(apply(dentus_A[,1:2], 1, pontoMaisProximo, c(0, 0), c(1, -1))))
+names(projecoes_red) = c("x1", "y1", "x2", "y2")
+ggplot(dentus_A, aes(humerus, ulna)) + geom_point() + coord_fixed() +
+  geom_abline(intercept = 0, slope = 1, color = "blue", linetype = "dashed") + 
+  geom_abline(intercept = 0, slope = -1, color = "red", linetype = "dashed") + 
+  geom_segment(x = 0, y = 0, xend = 1, yend = 1, arrow = arrow(length = unit(0.03, "npc")), color = "blue") + 
+  geom_segment(x = 0, y = 0, xend = 1, yend = -1, arrow = arrow(length = unit(0.03, "npc")), color = "red") + 
+  geom_segment(data = projecoes_blue, aes(x = x1, xend = x2, y = y1, yend = y2), linetype = "dotted", color = "blue") + 
+  geom_segment(data = projecoes_red, aes(x = x1, xend = x2, y = y1, yend = y2), linetype = "dotted", color = "red") + theme_bw()
+```
+
+Nós podemos também rotacionar o dados, e plotar cada individuo como se os novos eixos "compostos", o azul e o vermelho, fossem os eixos x e y:
+
+```{r}
+# Rotacionando os dados usando uma matriz de rotação
+dentus_A_rot = data.frame(as.matrix(dentus_A[,1:2]) %*% matrix(c(1/sqrt(2), 1/sqrt(2), 
+                                                                 1/sqrt(2), -1/sqrt(2)), 2, 2))
+names(dentus_A_rot) = c("x", "y")
+ggplot(dentus_A_rot, aes(x, y)) + geom_point() + coord_fixed() + 
+  geom_vline(xintercept = 0, color = "red", linetype = "dashed") + 
+  geom_hline(yintercept = 0, color = "blue", linetype = "dashed") + 
+  geom_segment(x = 0, y = 0, xend = 0, yend = 1, arrow = arrow(length = unit(0.03, "npc")), color = "red") + 
+  geom_segment(x = 0, y = 0, xend = 1, yend = 0, arrow = arrow(length = unit(0.03, "npc")), color = "blue") +theme_bw()
+```
+
+Qual será a correlação dos dados nesses novos eixos?
+
+```{r}
+cor(dentus_A_rot$x, dentus_A_rot$y)
+```
+
+Ou seja, eles ainda são correlacionados. Qual seriam os eixos que deixam nossos dados não correlacionados?
+
+### Meu primeiro PCA
+
+A analise de componentes principais encontra esses eixos não correlacionados usando a matriz de covariância. Por enquanto, vamos continuar com apenas duas medidas (humero e ulna da especie A) e tentar encontrar os eixos onde essas duas medidas não são correlacionadas. Para isso, vamos encontrar a matriz de covariância entre essas duas medidas:
+
+```{r}
+# matriz de covariância entre humero e ulna
+cov_hu = cov(dentus_A[,1:2])
+cov_hu
+```
+
+Para encontrar os componentes principais, vamos usar a função eigen:
+
+```{r}
+# Vamos usar a função eigen na matriz de covariância cov_hu
+PC_hu = eigen(cov_hu)
+PC_hu
+```
+
+O objeto de saida da eigen, que eu chamei de PC_hu, tem duas partes: values e vectors. O vectors é uma matriz $2\times2$, e cada coluna corresponde a um PC. O número de PCs é sempre o mesmo que o numero de eixos originais, afinal, eu precisava de 2 eixos para descrever os dados e uma rotação não vai alterar isso. Então, o primeiro componente principal da matriz de covariância entre humero e ulna é:
+
+```{r}
+# Primeiro usamos o operador $ para pegar a matriz de PCs (vectors), 
+# depois o operador [,1] para pegar a primeira coluna da matriz de PCs
+PC_hu$vectors[,1]
+```
+
+Vamos colocar esses eixos no gráfico, como fizemos antes com os eixos azul e vermelho (vou manter o azul e o vermelho a titulo de comparação, até que nosso chute tinha sido bom!):
+
+```{r, warning=FALSE, message=FALSE }
+PC1 = PC_hu$vectors[,1]
+PC2 = PC_hu$vectors[,2]
+
+ggplot(dentus_A, aes(humerus, ulna)) + geom_point() + coord_fixed() + 
+  geom_abline(intercept = 0, slope = 1, color = "blue", linetype = "dashed") + 
+  geom_abline(intercept = 0, slope = -1, color = "red", linetype = "dashed") + 
+  geom_segment(x = 0, y = 0, xend = PC1[1], yend = PC1[2], arrow = arrow(length = unit(0.03, "npc")), color = "green") + 
+  geom_segment(x = 0, y = 0, xend = PC2[1], yend = PC2[2], arrow = arrow(length = unit(0.03, "npc")), color = "purple") + theme_bw()
+```
+
+Agora vamos rotacionar os dados para os eixos dados pelos PCs
+
+```{r}
+# Rotacionando os dados usando os PCs
+dentus_A_rot_PCs = data.frame(as.matrix(dentus_A[,1:2]) %*% PC_hu$vectors)
+names(dentus_A_rot_PCs) = c("x", "y")
+ggplot(dentus_A_rot_PCs, aes(x, y)) + geom_point() + coord_fixed() + 
+  geom_vline(xintercept = 0, color = "purple", linetype = "dashed") + 
+  geom_hline(yintercept = 0, color = "green", linetype = "dashed") + 
+  geom_segment(x = 0, y = 0, xend = 0, yend = 1, arrow = arrow(length = unit(0.03, "npc")), color = "purple") + 
+  geom_segment(x = 0, y = 0, xend = 1, yend = 0, arrow = arrow(length = unit(0.03, "npc")), color = "green") +theme_bw()
+```
+
+E a correlação?
+
+```{r}
+round(cor(dentus_A_rot_PCs$x, dentus_A_rot_PCs$y), 8)
+```
+
+
+## PCA em todas as espécies
+
+Agora vamos partir pra um exemplo de verdade e calcular os PCs dos nossos quatro caracteres para todas as espécies. Para isso, vamos calcular novamente nossas matrizes de covariância:
+
+```{r}
+# Vamos criar uma lista com todas as nossas matrizes de uma vez só:
+cov_matrices = dlply(dentus, .(species), function(x) cov(x[,1:4]))
+
+# Agora podemos acessar cada matriz individualmente colocando no final do nome da lista 
+# o operador $ seguido do nome da especie
+# Por exemplo, essa é a matriz de covariância da espécie A:
+cov_matrices$A
+```
+
+Para encontrar os componentes principais, vamos usar a função eigen:
+
+```{r}
+PCs_A = eigen(cov_matrices$A)
+PCs_A
+```
+
+Agora o vectors é uma matriz $4\times4$ (começamos com 4 eixos), e cada coluna corresponde a um PC. Então, o primeiro componente principal de A é:
+
+```{r}
+# Primeiro usamos o operador $ para pegar a matriz de PCs (vectors), 
+# depois o operador [,1] para pegar a primeira coluna da matriz de PCs
+PCs_A$vectors[,1]
+```
+
+Note como todos os elementos desse componente tem o mesmo sinal e magnitude parecida. Isso significa que ao longo da direção definida por esse eixo todas as medidas aumentam ou diminuem juntas. Componentes desse tipo são chamados de componentes de tamanho (size). 
+
+Podemos olhar pra o segundo componente, que tem valores positivos para humero e ulna, e negativos para femur e tibia. Ou seja, é uma direção ao longo da qual humero e ulna aumentam enquanto femur e tibia diminuem. Esse tipo de componente é um contraste entre os dois grupos de caracteres.
+
+## Values?
+
+Para entender o que são os values no objeto de saida da eigen(), vamos projetar nossos dados nos PCs:
+
+```{r}
+# Rotacionando os dados usando os PCs
+dentus_A_rot_PCs = as.matrix(dentus_A[,1:4]) %*% PCs_A$vectors
+
+# Primeiras linhas dos dados rotacionados
+head(dentus_A_rot_PCs)
+```
+
+Agora vamos calcular a matriz de covariância desses dados rotacionados:
+
+```{r}
+round(cov(dentus_A_rot_PCs), 10)
+```
+ Primeiro, note que todos os valores fora da diagonal são zero. Isso é esperado, afinal é isso que a analise de componentes principais faz: encontra eixos onde nossos dados não são correlacionados. Agora, vamos olhar para a diagonal, as variâncias dos dados rotacionados. Compare essas variâncias com os valores na parte "values" da saida da função eigen(). 
+ 
+Comparou?
+
+São os mesmos valores. Os values são as variâncias nas direções dos componentes principais. 
+
+## O primeiro componente principal
+
+Vocês leram sobre linhas de menor resistencia evolutiva no artigo do Schluter, e agora podemos entender porque essa linha corresponde ao primeiro componente principal. A quantidade de variação total na população é sempre preservada em todas essas analises que fizemos, afinal são só rotações. Para conferir isso, vamos somar as variâncias originais e somar as variâncias saindo da eigen():
+
+```{r}
+var(dentus_A$humerus) + var(dentus_A$ulna) + var(dentus_A$femur) + var(dentus_A$tibia)
+sum(PCs_A$values)
+```
+
+A diferença é que usando os PCs como eixos para representar nossas variáveis, a variação é independente em cada eixo. Com isso, podemos simplesmente comparar as variâncias para saber em qual eixo está a maior parte da variação. Logo, o PC com maior variância corresponde ao eixo com maior variação fenotípica nos dados. Como evolução depende da variação disponível, a direção do primeiro componente principal é a direção que responde mais facilmente à seleção, ou seja, evolução é mais fácil ao longo do primeiro componente principal.
+
+## PCA como analise exploratória
+
+O objetivo dessa aula é só encontrar os PCs para todas as espécies, e vocês já sabem como faz isso nessa altura. Fora de biologia evolutiva, é comum PCA ser utilizado como uma analise exploratória e de redução dimensional. A ideia geral é sempre a mesma (encontrar eixos com variação independente), e eventualmente descrever os dados utilizando menos variáveis. É comum, por exemplo, utilizar apenas os scores nos primeiros componentes principais por eles responderem por grande parte da variação total. 
+
+Um uso possivel para PCA é encontrar grupos. Suponha que não soubessemos que nossos dados vem de cinco espécies distintas. Será que um PCA poderia ajudar? Vamos calcular os componentes principais da matriz de covariância total e fazer um gráfico dos scores (dados rotacionados) nos dois primeiros componentes principais:
+
+```{r}
+mat_total = cov(dentus[,1:4])
+eigT = eigen(mat_total)
+dentus_rot = data.frame(as.matrix(dentus[,1:4]) %*% eigT$vectors, species = dentus$species)
+names(dentus_rot) = c("PC1", "PC2", "PC3", "PC4", "species")
+ggplot(dentus_rot, aes(PC1, PC2)) + geom_point() + theme_bw()
+```
+
+Claramente existem grupos distintos nesses dados. Nós sabemos que eles correspondem a espécies diferentes, então vamos incluir essa informação como cores:
+
+```{r}
+ggplot(dentus_rot, aes(PC1, PC2, color = species)) + geom_point() + theme_bw()
+```
+
+Isso é reconfortante, mesmo sem saber as espécies de antemão conseguiriamos chegar em grupos de forma bastante satisfatória. 
+
+Além disso, podemos ver que boa parte da diferenciação entre espécies se dá ao longo do PC1 da matriz total. Como você interpreta esse fato? __Dica__: interprete o primeiro componente da matriz de covariância total.
