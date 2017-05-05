@@ -111,6 +111,10 @@ $(document).ready(function() {
 ## Homologias e Mapas Genótipo-Fenótipo {.centered}
 ![](Figures/gpmap_homology_2.png)
 
+## Como reconhecer homologias? {.centered}
+
+<img src='Figures/mammal_forelimbs.png' height=470px>
+
 ## Caráter
 
 Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de organismos
@@ -129,13 +133,24 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 ## Exemplo: Coloração {.centered}
 ![](Figures/lizard_set_3.png)
 
-## Medindo função {.centered}
+## Em princípio...
+
+> - Homologias não aparecem nesta definição de caráter
+
+> - Caracteres são divisões arbitrárias dque somos capazes de reconhecer
+
+> - O uso de um conjunto particular de caracteres se justifica pelo contexto teórico de referência
+
+## {.centered}
+![[@houle_measurement_2011]](Figures/theory_to_measurement.png)
+
+## Porque medir caracteres homólogos? {.centered}
+![](Figures/gpmap_homology_2.png)
+
+## Porque medir caracteres homólogos? {.centered}
 ![](Figures/forelimb_phylo.png)
 
-## Medindo função {.centered}
+## Porque medir caracteres homólogos? {.centered}
 ![](Figures/forelimb_phylo_func.png)
-
-## Do contexto teórico à mensuração {.centered}
-![[@houle_measurement_2011]](Figures/theory_to_measurement.png)
 
 ## Bibliografia {.bibs .columns-2}
