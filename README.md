@@ -43,7 +43,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
-**Aula 2**: [*Homologias, Caracteres e Mensurações*](http://wgar84.github.io/ModCurso/Aulas/02/index.html?presentme=FALSE)
+**Aula 2**: [*Homologias, Caracteres e Mensurações*](Aulas/02/index.html?presentme=false)
 
 + Leituras principais:
 
