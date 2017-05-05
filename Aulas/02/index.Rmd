@@ -12,8 +12,8 @@ output:
     fig_caption: true
     toc: true
     css: extra.css
-csl: /home/guilherme/Dropbox/Tese/Bib/evolution.csl
-bibliography: /home/guilherme/Dropbox/Global/tudo.bib
+csl: /home/guilherme/Dropbox/Global/evolution.csl
+bibliography: /home/guilherme/Dropbox/Global/CursoMod.bib
 ---	
 
 <style>
@@ -69,14 +69,16 @@ $(document).ready(function() {
 
 # Objetivos {.objs}
 
-> - 
+> - Relacionar o contexto teórico de um fenômeno de interesse às formas de mensurar seus efeitos
 
-> - 
+> - Elaborar esta relação a respeito de sistemas morfológicos, seu desenvolvimento e função
 
 ## Homologias {.columns-2}
 * Relações de equivalência entre atributos em espécies distintas
 
     > + Revelam origens evolutivas em comum
+
+	> + Vias de desenvolvimento compartilhadas
 
     > + Relação global entre atributos
 
@@ -86,18 +88,54 @@ $(document).ready(function() {
 <img src='../Figuras/../../../Figuras/Homology.jpg' height=470px>
 </div>
 
-## Homologias {.centered}
-![(Tulenko *et al.*, <footnote content = 'Scientific Reports 6:22720 (doi 10.1038/srep22720)'>2016</footnote>)](../../../Figuras/forelimb_phylo.png)
+## Um exemplo mais extremo {.centered}
+![[@tulenko_hoxd_2016]](../../../Figuras/forelimb_phylo.png)
 
-## Homologias {.centered}
+## {.columns-2 .smaller}
+
+> * Desenvolvimento dos elementos ósseos determinado pela expressão dos mesmos *loci* nas três linhagens
+
+&nbsp;
+
+> * Elementos ósseos adicionais nas linhagens derivadas regulados pelos mesmos *loci* em uma fase posterior
+
+<p class='forceBreak'> </p>
+
+<div class='centered'>
+![[@yano_making_2013]](../../../Figuras/hox_homology.png)
+</div>
+
+## Homologias e Mapas Genótipo-Fenótipo {.centered}
 ![](../../../Figuras/gpmap_homology_1.png)
 
-## Homologias {.centered}
+## Homologias e Mapas Genótipo-Fenótipo {.centered}
 ![](../../../Figuras/gpmap_homology_2.png)
 
-## Homologias {.centered}
+## Caráter
+
+Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de organismos
+
+> - *Mutuamente exclusivos*: a cada organismo atribui-se apenas um estado do caráter
+
+## Exemplo: Coloração {.centered}
+![](../../../Figuras/lizard_set_0.png)
+
+## Exemplo: Coloração {.centered}
+![](../../../Figuras/lizard_set_1.png)
+
+## Exemplo: Coloração {.centered}
+![](../../../Figuras/lizard_set_2.png)
+
+## Exemplo: Coloração {.centered}
+![](../../../Figuras/lizard_set_3.png)
+
+## Medindo função {.centered}
 ![](../../../Figuras/forelimb_phylo.png)
 
-## Homologias {.centered}
+## Medindo função {.centered}
 ![](../../../Figuras/forelimb_phylo_func.png)
 
+## Do contexto teórico à mensuração {.centered}
+![[@houle_measurement_2011]](../../../Figuras/theory_to_measurement.png)
+
+## Bibliografia {.bibs .columns-2}
