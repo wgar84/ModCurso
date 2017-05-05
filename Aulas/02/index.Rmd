@@ -85,11 +85,11 @@ $(document).ready(function() {
 <p class='forceBreak'> </p>
 
 <div class='centered'>
-<img src='../Figuras/../../../Figuras/Homology.jpg' height=470px>
+<img src='Figures/Homology.jpg' height=470px>
 </div>
 
 ## Um exemplo mais extremo {.centered}
-![[@tulenko_hoxd_2016]](../../../Figuras/forelimb_phylo.png)
+![[@tulenko_hoxd_2016]](Figures/forelimb_phylo.png)
 
 ## {.columns-2 .smaller}
 
@@ -102,14 +102,14 @@ $(document).ready(function() {
 <p class='forceBreak'> </p>
 
 <div class='centered'>
-![[@yano_making_2013]](../../../Figuras/hox_homology.png)
+![[@yano_making_2013]](Figures/hox_homology.png)
 </div>
 
 ## Homologias e Mapas Genótipo-Fenótipo {.centered}
-![](../../../Figuras/gpmap_homology_1.png)
+![](Figures/gpmap_homology_1.png)
 
 ## Homologias e Mapas Genótipo-Fenótipo {.centered}
-![](../../../Figuras/gpmap_homology_2.png)
+![](Figures/gpmap_homology_2.png)
 
 ## Caráter
 
@@ -118,24 +118,24 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 > - *Mutuamente exclusivos*: a cada organismo atribui-se apenas um estado do caráter
 
 ## Exemplo: Coloração {.centered}
-![](../../../Figuras/lizard_set_0.png)
+![](Figures/lizard_set_0.png)
 
 ## Exemplo: Coloração {.centered}
-![](../../../Figuras/lizard_set_1.png)
+![](Figures/lizard_set_1.png)
 
 ## Exemplo: Coloração {.centered}
-![](../../../Figuras/lizard_set_2.png)
+![](Figures/lizard_set_2.png)
 
 ## Exemplo: Coloração {.centered}
-![](../../../Figuras/lizard_set_3.png)
+![](Figures/lizard_set_3.png)
 
 ## Medindo função {.centered}
-![](../../../Figuras/forelimb_phylo.png)
+![](Figures/forelimb_phylo.png)
 
 ## Medindo função {.centered}
-![](../../../Figuras/forelimb_phylo_func.png)
+![](Figures/forelimb_phylo_func.png)
 
 ## Do contexto teórico à mensuração {.centered}
-![[@houle_measurement_2011]](../../../Figuras/theory_to_measurement.png)
+![[@houle_measurement_2011]](Figures/theory_to_measurement.png)
 
 ## Bibliografia {.bibs .columns-2}

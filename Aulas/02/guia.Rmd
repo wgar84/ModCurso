@@ -1,0 +1,48 @@
+---
+title: "Homologias, Caracteres e Mensurações"
+subtitle: "Modularidade: conectando padrões e processos em evolução multivariada"
+author: Guilherme Garcia
+date: wgar@usp.br
+logo: ../../logo.png
+output:
+  pdf_document:
+    latex_engine: xelatex
+header-includes:
+  - \usepackage{baskervald}
+  - \usepackage{setspace}
+  - \doublespacing
+fontsize: 12pt
+csl: /home/guilherme/Dropbox/Global/nature.csl
+bibliography: /home/guilherme/Dropbox/Global/CursoMod.bib
+---	
+
+Homologias são relações de equivalência entre atributos em espécies distintas.
+Por exemplo, os membros anteriores de todos os Tetrapoda exibem similaridades estruturais que permitem inferir a existência de homologias em todo o grupo, ilustrada aqui pelas asas de morcegos, pterossauros e aves.
+Aqui, vale a pena destacar três aspectos importantes deste conceito.
+Em primeiro lugar, homologias entre atributos indicam origens evolutivas em comum entre estas linhagens, a despeito de modificações posteriores associadas aos hábitos destes organismos; no exemplo, há uma convergência funcional posterior relacionada ao voo.
+Homologias também indicam a existência de vias de desenvolvimento em comum entre estas linhagens, ainda que esta correspondência seja apenas parcial, devido à modificações posteriores produzida pela evolução independente de linhagens filhas.
+Finalmente, implica dos aspectos anteriores que homologias são relações globais entre estes atributos; ou seja, de modo a caracterizar uma relação de homologia entre espécies, a princípio não é necessário estabelecer uma correspondência unívoca entre partes da estrutura em questão.
+No exemplo, ainda que consideremos esta estrutura homóloga como um todo, podemos observar (ou talvez lembrar) que as asas em Aves são caracterizadas por perdas e fusões entre ossos na porção distal do membro.
+
+Em um exemplo mais extremo deste aspecto, ainda que os membros anteriores em Tetrapoda sejam homólogos aos membros anteriores em outras linhagens basais de Vertebrata, não há uma correspondência clara entre os elementos componentes destas estruturas.
+Aqui podemos apenas estabelecer correspondências entre os *loci* envolvidos nestas vias de desenvolvimento compartilhadas por estas linhagens.
+Neste exemplo, a fase inicial do desenvolvimento ósseo de membros anteriores em teleósteos, em sarcopterígios basais e em tetrápodes é determinada pela expressão dos mesmos três *loci*, enquanto as estruturas adicionais observadas nas linhagens mais derivadas é contingente à expressão destes mesmos três *loci* em fases posteriores do desenvolvimento [@yano_making_2013].
+Este exemplo parece sugerir que homologias podem ser concebidas em qualquer escala de organização biológica.
+Podemos portanto definir homologias entre estruturas morfológicas e também entre sequências no genoma de organismos distintos.
+
+Podemos então pensar no mapa genótipo-fenótipo associado a uma dada estrutura morfológica em duas espécies distintas.
+Assim, em uma espécie $i$, os *loci* 1 a 4 condicionam os caracteres A a D; este complexo de caracteres representam um módulo funcional, visto que estes caracteres executam em conjunto a função denotada por $\alpha$.
+Como assumimos que as vias de desenvolvimento destes caracteres é relativamente independente de outros *loci* (não representados aqui), este também é um módulo ontogenético.
+Em uma outra espécie $j$, os *loci* 3 e 4 passam por modificações (tornando se os loci 3' e 4') de tal forma que sua expressão durante o desenvolvimento levam a alterações nos caracteres A e C (agora A' e C') e também à ausência do caráter B.
+Neste exemplo, podemos supor que estas modificações são consequência de seleção direcional ou estabilizadora relacionada a uma nova demanda funcional,  sobre estes caracteres, representada aqui como $\alpha'$.
+
+Aqui, vale a pena elaborar uma definição de caráter, e de modo geral, caracteres são conjuntos de atributos mutuamente exclusivos identificados em um dado conjunto de organismos. 
+Por mutuamente exclusivos, me refiro ao fato de que em cada organismo, eu identifico apenas um estado do caráter em questão.
+Por exemplo, neste conjunto de lagartos de colorações distintas, eu posso atribuir a cada um deles um estado distinto deste caráter "cor".
+Note que cada organismo no conjunto é associados a apenas um estado do caráter, e que todos os organismos são associados a algum estado.
+Obviamente, posso atribuir o mesmo estado a organismos que o compartilharem.
+Esta definição, bastante geral, não impõe nenhuma restrição ao conjunto de atributos, que pode portanto ser de qualquer natureza.
+Posso representar estes atributos em uma escala nominal como essa, mas posso também atribuir a cada organismo um conjunto de três valores, que aqui representam a decomposição da cor de cada organismo em vermelho, verde e azul.
+Esta definição também não impõe restrições a respeito do agrupamento do conjunto de organismos: estes lagartos podem representar uma população da mesma espécie, ou espécies distintas dentro de um gênero, ou até mesmo gêneros e famílias distintas, independente também das relações evolutivas entre estas unidades (por exemplo, se estas espécies formam ou não agrupamentos monofiléticos).
+
+## Referências Bibliográficas

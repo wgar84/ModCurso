@@ -1,0 +1,37 @@
+---
+title: "Homologias, Caracteres e Mensurações"
+subtitle: "Modularidade: conectando padrões e processos em evolução multivariada"
+author: Guilherme Garcia
+date: wgar@usp.br
+logo: ../../logo.png
+output:
+  pdf_document:
+    latex_engine: xelatex
+header-includes:
+  - \usepackage{baskervald}
+  - \usepackage{setspace}
+  - \doublespacing
+fontsize: 12pt
+csl: /home/guilherme/Dropbox/Global/nature.csl
+bibliography: /home/guilherme/Dropbox/Global/CursoMod.bib
+---	
+
+Homologias são relações de equivalência entre atributos em espécies distintas.
+Por exemplo, os membros anteriores de todos os Tetrapoda exibem similaridades estruturais que permitem inferir a existência de homologias em todo o grupo, ilustrada aqui pelas asas de morcegos, pterossauros e aves.
+Aqui, vale a pena destacar três aspectos importantes deste conceito.
+Em primeiro lugar, homologias entre atributos indicam origens evolutivas em comum entre estas linhagens, a despeito de modificações posteriores associadas aos hábitos destes organismos; no exemplo, há uma convergência funcional posterior relacionada ao voo.
+Homologias também indicam a existência de vias de desenvolvimento em comum entre estas linhagens, ainda que correspondência seja apenas parcial, devido à modificações posteriores produzida pela evolução independente de linhagens filhas.
+Finalmente, implica dos aspectos anteriores que homologias são relações globais entre estes atributos; ou seja, de modo a caracterizar uma relação de homologia entre espécies, a princípio não é necessário estabelecer uma correspondência unívoca entre partes da estrutura em questão.
+No exemplo, ainda que consideremos esta estrutura homóloga como um todo, podemos observar (ou talvez lembrar) que as asas em Aves são caracterizadas por perdas e fusões entre ossos na porção distal do membro.
+
+Em um exemplo mais extremo deste aspecto, ainda que os membros anteriores em Tetrapoda sejam homólogos aos membros anteriores em outras linhagens basais de Vertebrata, não há uma correspondência clara entre os elementos componentes destas estruturas.
+Aqui podemos apenas estabelecer correspondências entre os *loci* envolvidos nestas vias de desenvolvimento compartilhadas por estas linhagens.
+Neste exemplo, a fase inicial do desenvolvimento ósseo de membros anteriores em teleósteos, em sarcopterígios basais e em tetrápodes é determinada pela expressão dos mesmos três *loci*, enquanto as estruturas adicionais observadas nas linhagens mais derivadas é contingente à expressão destes mesmos três *loci* em fases posteriores do desenvolvimento [@yano_making_2013].
+
+Abstraíndo estes exemplos, podemos pensar no mapa genótipo-fenótipo associado a uma dada estrutura morfológica em duas espécies distintas.
+Assim, em uma espécie $i$, os *loci* 1 a 4 condicionam os caracteres A a D; este complexo de caracteres representam um módulo funcional, visto que estes caracteres executam em conjunto a função denotada por $\alpha$.
+Como assumimos que as vias de desenvolvimento destes caracteres é relativamente independente de outros *loci* (não representados aqui), este também é um módulo ontogenético.
+Em uma outra espécie $j$, os *loci* 3 e 4 passam por modificações de tal forma que sua expressão durante o desenvolvimento levam a alterações nos caracteres A e C e também a ausência do caráter B.
+Estas modificações na estrutura do mapa genótipo-fenótipo podem ser justificadas por uma demanda funcional distinta sobre estes caracteres, representada aqui como $\alpha'$, que levou a estas modificações por consequência de seleção direcional ou estabilizadora, por exemplo.
+
+## Referências Bibliográficas
