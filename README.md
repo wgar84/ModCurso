@@ -43,11 +43,15 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
-**Aula 2**: [*Homologias, Caracteres e Mensurações*](Aulas/02/index.html?presentme=false)
+**Aula 2**: *Homologias, Caracteres e Mensurações* 
+
+<!--- + [Apresentação](Aulas/02/index.html?presentme=false) -->
+
+<!--- + [Transcrição](Aulas/02/guia.pdf) -->
 
 + Leituras principais:
 
-  * Wagner, G. P. “What Is ‘homology thinking’ and what is it for?” Journal of Experimental Zoology Part B: Molecular and Developmental Evolution 326, no. 1 (2016): 3–8. doi:10.1002/jez.b.22656.
+  * Wagner, G. P. “What is 'homology thinking' and what is it for?” Journal of Experimental Zoology Part B: Molecular and Developmental Evolution 326, no. 1 (2016): 3–8. doi:10.1002/jez.b.22656.
 
   * Houle, D., C. Pélabon, G. P. Wagner, T. F. Hansen. “Measurement and Meaning In Biology.” The Quartely Review of Biology 86, no. 1 (2011): 3–34.
     
