@@ -140,8 +140,17 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 
 > - O uso de um conjunto particular de caracteres se justifica com base no contexto teórico de referência
 
-## {.centered}
-![[@houle_measurement_2011]](Figures/theory_to_measurement.png)
+## {.centered .smaller}
+![[@levins_dialectical_1985; @houle_measurement_2011]](Figures/dial_1.png)
+
+## {.centered .smaller}
+![[@levins_dialectical_1985; @houle_measurement_2011]](Figures/dial_2.png)
+
+## {.centered .smaller}
+![[@levins_dialectical_1985; @houle_measurement_2011]](Figures/dial_3.png)
+
+## {.centered .smaller}
+![[@levins_dialectical_1985; @houle_measurement_2011]](Figures/dial_4.png)
 
 ## Porque medir caracteres homólogos? {.centered}
 ![](Figures/gpmap_homology_2.png)
@@ -151,6 +160,14 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 
 ## Porque medir caracteres homólogos? {.centered}
 ![](Figures/forelimb_phylo_func.png)
+
+# Morfometria {.objs}
+
+- *Landmarks*
+
+- Morfometria Geométrica
+
+- Deformações
 
 ## {.centered}
 ![](Figures/landmarks.png)

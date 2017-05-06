@@ -22,3 +22,11 @@ knitr::opts_chunk$set(echo = TRUE)
 - Vetores como setas
 - Vetores como listas de números
 - Vetores como elementos de um espaço vetorial
+
+## Norma e Direção
+
+# Matrizes
+
+- Matrizes como transformações lineares
+
+# Autovetores e Autovalores
