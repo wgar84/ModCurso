@@ -112,7 +112,6 @@ $(document).ready(function() {
 ![](Figures/gpmap_homology_2.png)
 
 ## Como reconhecer homologias? {.centered}
-
 <img src='Figures/mammal_forelimbs.png' height=470px>
 
 ## Caráter
@@ -137,9 +136,9 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 
 > - Homologias não aparecem nesta definição de caráter
 
-> - Caracteres são divisões arbitrárias dque somos capazes de reconhecer
+> - Caracteres são divisões arbitrárias que somos capazes de reconhecer em organismos ou suas partes
 
-> - O uso de um conjunto particular de caracteres se justifica pelo contexto teórico de referência
+> - O uso de um conjunto particular de caracteres se justifica com base no contexto teórico de referência
 
 ## {.centered}
 ![[@houle_measurement_2011]](Figures/theory_to_measurement.png)
@@ -152,5 +151,8 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 
 ## Porque medir caracteres homólogos? {.centered}
 ![](Figures/forelimb_phylo_func.png)
+
+## {.centered}
+![](Figures/landmarks.png)
 
 ## Bibliografia {.bibs .columns-2}

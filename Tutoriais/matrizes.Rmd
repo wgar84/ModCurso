@@ -1,7 +1,7 @@
 ---
 title: "Estimando matrizes e componentes principais"
 author: "Diogo Melo"
-date: "October 12, 2016"
+date: "10 de Maio de 2017"
 output:
   html_document:
     highlight: tango

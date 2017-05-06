@@ -8,7 +8,9 @@ output:
   pdf_document:
     latex_engine: xelatex
 header-includes:
-  - \usepackage{baskervald}
+  - \usepackage[brazilian]{babel}
+  - \usepackage[utf8]{inputenc}
+  - \usepackage[bitstream-charter]{mathdesign}
   - \usepackage{setspace}
   - \doublespacing
 fontsize: 12pt
@@ -53,7 +55,7 @@ Esta definição também não impõe restrições a respeito do agrupamento do c
 É importante notar que, a princípio, esta definição de caráter não faz referência a homologias.
 De uma certa maneira, a partir desta definição, caracteres são divisões arbitrárias que somos capazes de reconhecer em organismos, ou em partes destes organismos.
 No exemplo dos lagartos, a princípio não sabemos se as colorações distintas são produzidas por vias metabólicas ou ontogenéticas em comum; apenas somos capazes de reconhecer diferenças neste atributo, e também somos capazes de dar a cada estado deste atributo uma denominação distinta.
+O que determina a utilidade um conjunto de caracteres para representar um dado organismo ou suas partes é o contexto téorico de referência, ou seja, as relações que estabelecemos entre um fenômeno de interesse e os efeitos deste fenômeno sobre organismos de interesse, representados sob a forma de caracteres em que esperamos que estes efeitos sejam mensuráveis.
+Acredito que um exemplo [@houle_measurement_2011] deve deixar isso mais claro.
 
-
-
-## Referências Bibliográficas
+## Bibliografia

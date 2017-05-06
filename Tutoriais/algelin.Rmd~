@@ -1,0 +1,24 @@
+---
+title: "Básico de Álgebra Linear"
+author: "Guilherme Garcia"
+date: "09 de Maio de 2017"
+output:
+  html_document:
+    highlight: tango
+    number_sections: yes
+    theme: flatly
+    toc: yes
+    toc_float:
+      collapsed: no
+      smooth_scroll: no
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Vetores
+
+- Vetores como setas
+- Vetores como listas de números
+- Vetores como elementos de um espaço vetorial
