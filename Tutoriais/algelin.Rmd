@@ -5,9 +5,8 @@ date: "09 de Maio de 2017"
 output:
   html_document:
     highlight: tango
-    number_sections: yes
+    number_sections: no
     toc: yes
-    toc_depth: 1
     theme: cosmo
   toc_float:
       collapsed: no
