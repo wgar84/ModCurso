@@ -6,16 +6,24 @@ output:
   html_document:
     highlight: tango
     number_sections: yes
-    theme: flatly
     toc: yes
-    toc_float:
+    toc_depth: 1
+    theme: cosmo
+  toc_float:
       collapsed: no
       smooth_scroll: no
+bibliography: /home/guilherme/Dropbox/Global/CursoMod.bib
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+# Objetivos
+
+O objetivo deste tutorial é introduzir alguns conceitos básicos de álgebra linear.
+Esta disciplina possui um número muito grande de aplicações, que vão da computação gráfica até a previsão do tempo.
+No contexto deste curso, alguns conceitos centrais em genética quantitativa  são expressos através de vetores e matrizes, os objetos centrais desta introdução.
 
 # Vetores
 

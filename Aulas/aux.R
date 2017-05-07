@@ -9,4 +9,6 @@ render('../Tutoriais/algelin.Rmd', output_dir = '../Tutoriais')
 
 browseURL('02/index.html')
 
+browseURL('../Tutoriais/algelin.html')
+
 system('evince 02/guia.pdf &')
