@@ -64,6 +64,20 @@ Vamos ignorar neste exemplo o efeito de forma sobre a tolerância térmica, supo
 Desta forma, estes lagartos variam em coloração, e novamente, não temos a princípio a menor ideia de como esta variação em coloração é expressa em termos de produtos de vias de desenvolvimento.
 Uma maneira de relacionar esta coloração à tolerância térmica se dá através de um experimento que consiste em separar os lagartos em diferentes tratamentos de acordo com sua coloração e aumentar a temperatura gradativamente de modo que registramos a temperatura em que metade dos indivíduos em cada tratamento acabam por morrer.
 Este atributo representa a tolerância térmica associada a cada coloração na população e, por exemplo, podemos supor que indivíduos com colorações mais próximas de marrom possuem tolerâncias térmicas maiores conforme a ordenação do atributo mensurado.
-Esta ordenação representa a estrutura de relações empíricas associada ao atributo $T_{50}$, e conforme a hipótese, ela se associa à variação em coloração na população.
+Esta ordenação representa a estrutura de relações empíricas associada ao atributo $T_{50}$, que se refere ao conjunto de organismos, as operações que podemos executar com eles (por exemplo, agrupá-los em função de suas cor e cozinhá-los lentamente) e as relações estabelecidas a partir destas operações (no caso, quem morre mais rápido).
+Conforme a hipótese, a variação em quem morre mais rápido de fato se associa à variação em coloração na população.
+
+Mas então porque medir caracteres homólogos?
+Ora, se é do nosso interesse fazer inferências a respeito da estrutura do mapa genótipo-fenótipo em um complexo morfológico em espécies distintas, é necessário que a estrutura das relações empíricas entre os caracteres que definimos respeite as relações de homologia entre partes nestas espécies.
+Somente desta forma podemos conectar os efeitos observados nestes caracteres (como por exemplo sua estrutura de covariância) às diferenças ou similaridades em processos estruturadores do desenvolvimento (como a rede de interações pleiotrópicas).
+
+Isto significa que é imperativo medir caracteres homólogos?
+Claro que não.
+Em resumo, isto depende de qual contexto teórico queremos utilizar como referência.
+No caso de uma comparação entre estas linhagens distintas de vertebrados, talvez gostaríamos de avaliar se a convergência funcional entre estruturas produz covariâncias similares entre elementos que executam funções análogas, a despeito de suas origens ontogenéticas.
+Neste caso, apenas temos que atentar para o fato de que os caracteres que vamos definir neste contexto serão bastante diferentes do que aqueles que definimos no contexto de homologias.
+No exemplo, provavelmente deveríamos mensurar a área de cada nadadeira, o formato do contorno exterior e provavelmente algo relacionado à musculatura propulsora de cada nadadeira, por exemplo.
+
+
 
 ## Bibliografia

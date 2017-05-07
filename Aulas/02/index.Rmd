@@ -151,13 +151,63 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 ## {.centered .smaller}
 ![[@levins_dialectical_1985; @houle_measurement_2011]](Figures/dial_4.png)
 
+## Mensuração
+
+> - *Estrutura de relações empíricas*: objetos reais, seus atributos e o conjunto de operações sobre eles
+
+> - *Estrutura de relações numéricas*: valores/estados dos atributos e o conjunto de operações válidas entre estes valores
+
+> - **Mensuração**:  Relação de equivalência entre estas estruturas
+
+## {.centered .smaller}
+![[@levins_dialectical_1985; @houle_measurement_2011]](Figures/dial_4.png) 
+
+## {.centered .smaller}
+![[@levins_dialectical_1985; @houle_measurement_2011]](Figures/dial_5.png) 
+
+## Temperatura {.centered}
+![](Figures/temp_1.png)
+
+## Temperatura {.centered}
+![](Figures/temp_2.png)
+
+## Temperatura {.centered}
+![](Figures/temp_3.png)
+
+## Temperatura {.centered}
+![](Figures/temp_4.png)
+
+## Temperatura {.centered}
+![](Figures/temp_5.png)
+
+## Temperatura {.centered}
+![](Figures/temp_6.png)
+
+## Temperatura {.centered}
+![](Figures/temp_7.png)
+
+## {.centered .smaller}
+![@houle_measurement_2011](Figures/theory_to_measurement.png)
+
+## Distância e Peso
+![](Figures/balance.png)
+
+## Medidas de Referência
+![](Figures/reference_1.png)
+
+## Medidas de Referência
+![](Figures/reference_2.png)
+
+## Medidas de Referência
+![](Figures/reference_3.png)
+
 ## Porque medir caracteres homólogos? {.centered}
 ![](Figures/gpmap_homology_2.png)
 
-## Porque medir caracteres homólogos? {.centered}
+## Quando não medir caracteres homólogos? {.centered}
 ![](Figures/forelimb_phylo.png)
 
-## Porque medir caracteres homólogos? {.centered}
+## Quando não medir caracteres homólogos? {.centered}
 ![](Figures/forelimb_phylo_func.png)
 
 # Morfometria {.objs}
