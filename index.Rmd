@@ -36,6 +36,8 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 # Aulas Teóricas
 
+[Leituras](leituras.zip)
+
 ### 1. *Níveis de modularidade: individual e populacional*
 
 + Leitura principal: 
