@@ -36,7 +36,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 # Aulas Teóricas
 
-## Aula 1: *Níveis de modularidade: individual e populacional*
+### 1. *Níveis de modularidade: individual e populacional*
 
 + Leitura principal: 
 
@@ -54,7 +54,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
-## Aula 2: *Homologias, Caracteres e Mensurações* 
+### 2. *Homologias, Caracteres e Mensurações* 
 
 <!--- + [Apresentação](Aulas/02/index.html?presentme=false) -->
 
@@ -74,14 +74,14 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Wagner, G. P., M. D. Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
 
-## Aula 3: *Caracterização de variação em dimensionalidade alta*
+### 3. *Caracterização de variação em dimensionalidade alta*
 
 + Caracteres e matrizes
 + Modelos lineares
 + Componentes principais
 + Caracterização de variação direcional
 
-## Aula 4: *Detecção de Padrões de Modularidade*
+### 4. *Detecção de Padrões de Modularidade*
 
 + Leituras Principais
 
@@ -90,7 +90,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
   * Goswami, A., J. A. Finarelli. “EMMLi: A Maximum Likelihood Approach to the Analysis of Modularity.” Evolution 70, no. 7 (July 1, 2016): 1622–37. doi:10.1111/evo.12956.
 
 
-## Aula 5: *Paisagem adaptativa fenotípica*
+### 5. *Paisagem adaptativa fenotípica*
 
 + Fenótipo e seleção
 + Superfícies adaptativas individuais e populacionais
@@ -98,7 +98,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 + Os 3 tipos de &#x03B2; (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
 + Matriz &#x03B3;
 
-## Aula 6: *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
+### 6. *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
 
 + Leituras principais:
 
