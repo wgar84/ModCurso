@@ -11,6 +11,9 @@ render('../Tutoriais/matrizes.Rmd', output_dir = '../Tutoriais')
 
 render('../Tutoriais/inicio.Rmd', output_dir = '../Tutoriais')
 
+render('../index.Rmd', output_dir = '../')
+
+
 browseURL('02/index.html')
 
 browseURL('../Tutoriais/algelin.html')

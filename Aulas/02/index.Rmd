@@ -186,7 +186,7 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 ## Temperatura {.centered}
 ![](Figures/temp_7.png)
 
-## {.centered .smaller}
+## Outro exemplo {.centered .smaller}
 ![[@houle_measurement_2011]](Figures/theory_to_measurement.png)
 
 ## Distância e Peso
@@ -206,9 +206,6 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 
 ## Medidas de referência {.centered}
 <img src='Figures/reference_3.png' height = 450px>
-
-## {.centered .smaller}
-![](Figures/meas_table.png)
 
 ## Porque medir caracteres homólogos? {.centered}
 ![](Figures/gpmap_homology_2.png)
