@@ -186,17 +186,17 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 ## Temperatura {.centered}
 ![](Figures/temp_7.png)
 
-## Outro exemplo {.centered .smaller}
+## {.centered .smaller}
 ![[@houle_measurement_2011]](Figures/theory_to_measurement.png)
 
-## Distância e Peso
+## Tamanho e Peso {.smaller}
 <div class='centered'>
 ![](Figures/balance.png)
 </div>
 
-**Concatenação**
-
-   > + Comparação entre objetos permite estrutura de produto nas relações numéricas
+> + Comparação entre objetos permite estrutura de produto nas relações numéricas
+   
+> + Passível de transformação para escala log
 
 ## Medidas de referência {.centered}
 <img src='Figures/reference_1.png' height = 450px>
@@ -207,6 +207,39 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 ## Medidas de referência {.centered}
 <img src='Figures/reference_3.png' height = 450px>
 
+## {.centered .smaller}
+![[@houle_measurement_2011]](Figures/theory_to_measurement.png)
+
+## Medidas Pragmáticas
+
+- Como mensurar atratividade?
+
+<div class='build'>
+- Poderíamos fazer um experimento:
+
+<div class='centered'>
+![](Figures/fishtank_1.png)
+</div>
+</div>
+
+## Medidas Pragmáticas
+
+- Como mensurar atratividade?
+
+- Poderíamos fazer um experimento:
+
+<div class='centered'>
+![](Figures/fishtank_2.png)
+</div>
+
+## Medidas Pragmáticas
+
+> - Algumas mensurações apenas aproximam o fenômeno de interesse
+
+> - Aptidão, este atributo elusivo...
+
+> - Nunca se esqueça da distinção entre o fenômeno de interesse e a forma que você usa para representá-lo
+
 ## Porque medir caracteres homólogos? {.centered}
 ![](Figures/gpmap_homology_2.png)
 
@@ -216,15 +249,59 @@ Conjunto de atributos *mutuamente exclusivos* identificados em um conjunto de or
 ## Quando não medir caracteres homólogos? {.centered}
 ![](Figures/forelimb_phylo_func.png)
 
+## Uma Situação Ideal {.centered .smaller}
+![[@young_development_2010]](Figures/limb_struct.png)
+
 # Morfometria {.objs}
 
 - *Landmarks*
 
-- Morfometria Geométrica
+- Morfometria Tradicional e Geométrica
 
 - Deformações
+
+## *Landmarks*
+
+> * Reduzir as relações de homologia entre partes
+
+> * Relações de homologias entre pontos [@bookstein_morphometric_1991]
+
+<div class='build'>
+* Tipos de Landmarks
+
+     + Justaposição de tecidos
+	 
+     + Máximos de curvaturas locais
+	 
+     + Máximos de curvaturas globais / outros
+</div>
 
 ## {.centered}
 ![](Figures/landmarks.png)
 
-## Bibliografia {.bibs .columns-2}
+## Distâncias Lineares {.centered}
+![](Figures/skull_dist.png)
+
+## Coordenadas Cartesianas {.centered}
+![](Figures/skull_lm.png)
+
+## Análise Generalizada de Procrustes {.centered}
+![](Figures/gm.png)
+
+## Deformações {.centered .columns-2}
+
+![[@thompson_growth_1917]](Figures/growth.jpg)
+
+<p class='forceBreak'> </p>
+
+![D'arcy Thompson](Figures/thompson.jpg)
+
+## Deformações {.columns-2}
+
+<img src='Figures/twoshapes.png' width=400px>
+
+<p class='forceBreak'> </p>
+
+<img src='Figures/field.png' width=400px>
+
+## Bibliografia {.bibs}

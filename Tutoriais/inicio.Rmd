@@ -52,14 +52,14 @@ A primeira coisa a se fazer é criar uma pasta para você armazenar todos os arq
 Depois de criar a pasta para o curso, faca o seguinte:
 Verifique o diretório de trabalho atual. Obs: Para rodar o comando getwd() clique crtl + enter no windows ou command + enter no mac. Siga da mesma forma para qualquer outro comando que quiser rodar abaixo.
 
-```{r}
+```{r, eval = FALSE}
 getwd() 
 
 ```
 
 Se necessário, mude o diretorio de trabalho (para trabalhar dentro da sua pasta do curso). Para isso, use o comando setwd() e o caminho do seu computador até o diretório criado. Exemplo: **setwd("~/Desktop/disciplina")**. Dica: use "" e a tecla tab para ajudar a visualizar os caminhos do computador.  
 Se usou o comando **setwd()** verifique em seguida o diretório atual:
-```{r}
+```{r, eval = FALSE}
 getwd()
 ```
 
@@ -67,7 +67,7 @@ Você também tem a opção de fazer isso utilizando a janela no canto inferior 
 
 ## Carregue alguns pacotes
  observação: se ainda não instalou algum desses pacotes, faça isso primeiro. Exemplo: **install.packages("ggplot2")**
-```{r warning=FALSE, message=FALSE}
+```{r warning=FALSE, message=FALSE, eval = FALSE}
 
 #carregando
 

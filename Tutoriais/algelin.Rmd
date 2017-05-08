@@ -8,8 +8,8 @@ output:
     highlight: pygments
     number_sections: false
     toc: true
+    toc_depth: 2
     theme: yeti
-    toc_depth: 3
     toc_float: 
       collapsed: false
       smooth_scroll: false
@@ -18,6 +18,14 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+\newcommand{\ihat}{\boldsymbol{\hat \imath}}
+\newcommand{\jhat}{\boldsymbol{\hat \jmath}}
+\newcommand{\u}{\boldsymbol{u}}
+\newcommand{\v}{\boldsymbol{v}}
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Overpass+Mono:400|Lora:700');
@@ -58,9 +66,9 @@ Talvez, a concepção mais próxima de nós biólogos é a de um vetor como uma 
 Imagine que você toma algumas medidas lineares de uma coleção de organismos: a largura da cabeça, o comprimento da cabeça e o comprimento da cauda, por exemplo.
 Para cada indivíduo de sua amostra, você tem uma coleção de três valores, e é razoável pensar que cada indivíduo é representado por uma concatenação destes três valores,
 $$
-\vec{a} = (x, y, z); \quad \vec{b} = (x', y', z') ... 
+\boldsymbol{a} = (x, y, z); \quad \boldsymbol{b} = (x', y', z') ... 
 $$
-em que $\vec{a}$ e $\vec{b}$ se referem a dois indivíduos distintos na amostra.
+em que $\boldsymbol{a}$ e $\boldsymbol{b}$ se referem a dois indivíduos distintos na amostra.
 Claro que não precisamos nos ater a apenas três mensurações, de modo que esse vetor pode representar quantas medidas gostaríamos de tomar, mas é melhor manter as ideias em dimensionalidade baixa, por enquanto.
 
 Uma outra representação para vetores, talvez mais próxima da realidade dos físicos é imaginar um vetor como uma seta. 
@@ -68,30 +76,33 @@ Para eles, várias quantidades de interesse são naturalmente representadas como
 Cada valor na concatenação acima pode ser concebido como a coordenada deste vetor em um eixo, e podemos representar graficamente cada vetor como uma seta que sai da origem destas coordenadas.
 Por exemplo, os vetores
 $$
-\vec{u} = (0, -4); \quad \vec{v} = (2, 2); \quad \vec{w} = (-1, 3)
+\u = (0, -4); \quad \v = (2, 2); \quad \boldsymbol{w} = (-1, 3)
 $$
 podem ser representados graficamente no R usando o seguinte código:
 ```{r draw_vector, fig.asp = 1}
-### definindo alguns vetores
+# definindo alguns vetores
 u <- c(0, -4)
 v <- c(2, 2)
 w <- c(-1, 3)
 
-### essa pequena função facilita bastante representar vetores na janela gráfica
+# essa pequena função facilita bastante representar vetores na janela gráfica
 plotVector <- function(v, color = 'black', width = 1)
     arrows(x0 = 0, y0 = 0, x1 = v[1], y1 = v[2],
            col = color, lwd = width, angle = 10)
 
-### vamos apenas inicializar uma região gráfica vazia;
-### xlim e ylim se referem aos limites desta janela;
-### xlab e ylab são os nomes de cada eixo (nada, no caso).
+# vamos apenas inicializar uma região gráfica vazia;
+# xlim e ylim se referem aos limites desta janela;
+# xlab e ylab são os nomes de cada eixo (nada, no caso).
 plot(NA, xlim = c(-5, 5), ylim = c(-5, 5), xlab = '', ylab = '', asp = 1)
 
-### vamos também desenhar linhas que representam os eixos de coordenadas
-abline(h = 0, col = 'grey')
-abline(v = 0, col = 'grey')
+# vamos também desenhar linhas que representam o sistema de coordenadas
+for(i in (-5):5)
+    {
+        abline(h = i, col = ifelse(i != 0, 'grey', 'black'))
+        abline(v = i, col = ifelse(i != 0, 'grey', 'black'))
+    }
 
-### agora, podemos usar a função que desenha vetores
+# agora, podemos usar a função que desenha vetores
 plotVector(u, 'darkgreen')
 plotVector(v, 'blue')
 plotVector(w, 'red')
@@ -100,8 +111,6 @@ plotVector(w, 'red')
 
 **Importante**: Idealmente, para todo código neste tutorial, seria bom você colá-lo em um *script* no RStudio e executá-lo mudando algumas coisas só para ver o que acontece.
 No caso deste código acima, você pode plotar outros vetores, por exemplo, ou talvez mudar as cores.
-Em alguns casos isso será estimulado através de uma ou mais perguntas, mas a sua curiosidade é fundamental na tarefa de se apropriar dos conceitos explorados aqui.
-Por exemplo, você não fica tentado a descobrir o que o parâmetro *asp* faz na chamada da função plot?
 
 Uma terceira concepção é mais próxima da realidade dos matemáticos, que em geral pensam as coisas na forma de conjuntos, as operações que podemos fazer com elementos neste conjunto, e as propriedades destas operações.
 Nesta concepção, a representação mais adequada para um vetor é aquela que facilita sua compreensão do que está acontecendo.
@@ -110,37 +119,40 @@ No entanto, é importante notar que, qualquer que seja a operação feita com um
 Inicialmente, podemos fazer duas coisas com vetores: somá-los e multiplicá-los por números.
 Para somar dois vetores, a forma mais simples de pensar a princípio é simplesmente somando suas entradas correspondentes individualmente:
 $$
-\vec{u} = (u_1, u_2); \vec{v} = (v_1, v_2) 
-\Rightarrow \vec{u} + \vec{v} = (u_1 + v_1, u_2 + v_2)
+\u = (u_1, u_2); \v = (v_1, v_2) 
+\Rightarrow \u + \v = (u_1 + v_1, u_2 + v_2)
 $$
 Além disso, podemos pensar nesta soma como uma concatenação de ações.
 Neste código, mostramos que a soma de dois vetores, quando representados sob a forma de setas, corresponde a andar na direção e distância dada pelo primeiro vetor, depois andar a direção e distância dada pelo segundo vetor.
 
 ```{r vector_sum, fig.asp = 1}
-u <- c(2, 1)
-v <- c(0, 3)
+u <- c(5, 1)
+v <- c(-1, 3)
 
-### esta função desenha um vetor a partir da ponta de outro vetor
-plotDislocatedVector <- function(u, v, color = 'black', width = 1)
+# esta função desenha um vetor 'v' a partir da ponta de outro vetor 'u'
+plotDislocatedVector <- function(v, u, color = 'black', width = 1)
     arrows(x0 = u[1], y0 = u[2], x1 = u[1] + v[1], y1 = u[2] + v[2],
            col = color, lwd = width, angle = 10)
 
-### novamente, vamos inicializar um gráfico vazio
+# novamente, vamos inicializar um gráfico vazio
 plot(NA, xlim = c(-5, 5), ylim = c(-5, 5), xlab = '', ylab = '', asp = 1)
 
-abline(h = 0, col = 'grey')
-abline(v = 0, col = 'grey')
+for(i in (-5):5)
+    {
+        abline(h = i, col = ifelse(i != 0, 'grey', 'black'))
+        abline(v = i, col = ifelse(i != 0, 'grey', 'black'))
+    }
 
 plotVector(u, 'blue')
-plotDislocatedVector(u, v, 'red')
+plotDislocatedVector(v, u, 'red')
 plotVector(u + v, 'purple', width = 2)
 ```
 
 Multiplicar um vetor por um número é também bastante direto, basta apenas multiplicar suas entradas individuais pelo número:
 $$
-\vec{u} = (u_1, u_2) \Rightarrow \alpha \cdot \vec{u} = (\alpha \cdot u_1, \alpha \cdot u_2)
+\u = (u_1, u_2) \Rightarrow \alpha \cdot \u = (\alpha \cdot u_1, \alpha \cdot u_2)
 $$
-Neste contexto, chamamos de *escalar* este valor $\alpha$ que multiplica o vetor $\vec{u}$.
+Neste contexto, chamamos de *escalar* este valor $\alpha$ que multiplica o vetor $\u$.
 
 ### Exercício 1
 Tente modificar os pedaços de código utilizados anteriormente para representar graficamente o produto entre vetores e escalares. Depois, responda as seguintes perguntas:
@@ -154,7 +166,7 @@ Tente modificar os pedaços de código utilizados anteriormente para representar
 Podemos caracterizar um vetor por sua **norma**, ou seja, o comprimento da seta que representa o vetor, e por sua **direção**, ou seja, para onde o vetor aponta.
 A norma de um vetor pode ser calculada em duas dimensões pela relação de Pitágoras:
 $$
-\|\vec{u}\| = \sqrt{u_1^2 + u_2^2} 
+\|\u\| = \sqrt{u_1^2 + u_2^2} 
 $$
 mas, independente do número de dimensões representadas no vetor, a norma de um vetor é obtida como sendo a raiz quadrada da soma de todas as coordenadas ao quadrado.
 
@@ -166,24 +178,25 @@ Leia atentamente e execute o código a seguir:
 ```{r circle_sample, eval = FALSE}
 require(evolqg)
 
-### o pacote evolqg possui uma função que normaliza um vetor
+# o pacote evolqg possui uma função que normaliza um vetor
 ?Normalize
 
-### vamos gerar alguns vetores aleatórios em duas dimensões
+# vamos gerar alguns vetores aleatórios em duas dimensões
 
-### primeiro, vamos gerar alguns números advindos de uma distribuição normal padrão
+# primeiro, vamos gerar alguns números advindos de uma distribuição normal padrão
 rand.vec <- rnorm(100)
 
-### agora, vamos organizar esses números como vetores em uma tabela
+# agora, vamos organizar esses números como vetores em uma tabela
 rand.vec <- matrix(rand.vec, nrow = 50, ncol = 2)
 
-### cada vetor aleatório corresponde a uma linha desta tabela
-### quero normalizar cada vetor, utilizando a função aaply
+# cada vetor aleatório corresponde a uma linha desta tabela
+# quero normalizar cada vetor, utilizando a função aaply
+?aaply
 norm.vec <- aaply(rand.vec, 1, Normalize)
 
-### agora, vamos plotar estes vetores
-### aqui, não vou me preocupar em representá-los como setas
-### apenas o ponto no plot entre suas coordenadas é suficiente
+# agora, vamos plotar estes vetores
+# aqui, não vou me preocupar em representá-los como setas
+# apenas o ponto no plot entre suas coordenadas é suficiente
 plot(norm.vec, asp = 1, pch = 20)
 ```
 
@@ -193,8 +206,102 @@ plot(norm.vec, asp = 1, pch = 20)
 
 3. Você consegue elaborar uma razão para esta forma estar sendo gerada?
 
+## Bases
+
+Bases são um conceito bastante simples, mas que possui muitas consequencias importantes.
+De maneira simples, posso escrever um vetor qualquer no espaço bidimensional da seguinte forma:
+$$
+\u = \begin{bmatrix} u_1 \\ u_2 \\ \end{bmatrix} \Rightarrow 
+\u = u_1 \cdot \begin{bmatrix} 1 \\ 0 \\ \end{bmatrix} +
+	u_2 \cdot \begin{bmatrix} 0 \\ 1 \\ \end{bmatrix}
+$$
+introduzindo também a notação de vetores como matrizes-coluna.
+É importante notar que qualquer vetor bidimensional pode ser escrito desta forma, como uma *combinação linear* dos vetores $(1, 0)$ e $(0, 1)$.
+Basta substituir os valores $u_1$ e $u_2$ por quaisquer pares de números, e eu obtenho um vetor no espaço bidimensional.
+Estes dois vetores são importantes o bastante para receber nomes especiais:
+$$
+\ihat = \begin{bmatrix} 1 \\ 0 \\ \end{bmatrix}; 
+\jhat = \begin{bmatrix} 0 \\ 1 \\ \end{bmatrix}.
+$$
+Juntos, $\ihat$ e $\jhat$ constituem o que chamamos de *base canônica* do espaço bidimensional (que, pra economizar palavras, vamos chamar de $\mathbb{R}^2$ a partir de agora).
+Daí podemos escrever $\u$ como
+$$
+\u = u_1 \ihat + u_2 \jhat
+$$
+que é mais uma forma de representar um vetor.
+Como $\ihat$ e $\jhat$ podem ser combinados de modo a produzir qualquer vetor no $\mathbb{R}^2$, dizemos que estes vetores *geram* o espaço.
+
+Mas, somente estes dois vetores são capazes de gerar o espaço bidimensional?
+
+Existem pares de vetores que não são capazes de fazê-lo?
+
+### Exercício 3
+
+1. Escreva o vetor $(5, 1)$ como uma combinação linear dos vetores $(-2, 1)$ e $(1, 3)$.
+
+*Dica*: Vamos escrever o problema:
+$$
+\begin{bmatrix} 5 \\ 1 \\ \end{bmatrix} = \alpha \begin{bmatrix} -2 \\ 1 \\ \end{bmatrix} + 
+\beta \begin{bmatrix} 1 \\ 3 \\ \end{bmatrix}.
+$$
+É possível achar valores para $\alpha$ e $\beta$?
+
+```{r plot_soln, eval = FALSE}
+u <- c(-2, 1)
+v <- c(1, 3)
+w <- c(5, 1)
+
+# aqui vão suas soluções
+# descomente o código para executar essas linhas quando você achar as soluções
+# alpha <- 
+# beta <-
+
+plot(NA, xlim = c(-5, 5), ylim = c(-5, 5), xlab = '', ylab = '', asp = 1)
+
+for(i in (-5):5)
+    {
+        abline(h = i, col = ifelse(i != 0, 'grey', 'black'))
+        abline(v = i, col = ifelse(i != 0, 'grey', 'black'))
+    }
+
+# confira sua solução
+# enquanto vc não achar alpha e beta e atribuir valores
+# esse código não vai funcionar
+plotVector(alpha * u, 'darkgreen')
+plotDislocatedVector(beta * v, alpha * u, 'blue')
+plotVector(w, 'red', width = 2)
+# se estiver certo a ponta dos vetores vai coincidir
+```
+
+2. Escreva o mesmo vetor $(5, 1)$ como combinação linear dos vetores $(-2, 1)$ e $(2, -1)$.
+
+```{r plot_impossible, eval = FALSE}
+# o mesmo código deve ajudar você a entender o que está acontecendo nesta situação
+u <- c(-2, 1)
+v <- c(2, -1)
+w <- c(5, 1)
+
+plot(NA, xlim = c(-5, 5), ylim = c(-5, 5), xlab = '', ylab = '', asp = 1)
+
+for(i in (-5):5)
+    {
+        abline(h = i, col = ifelse(i != 0, 'grey', 'black'))
+        abline(v = i, col = ifelse(i != 0, 'grey', 'black'))
+    }
+
+plotVector(u, 'darkgreen')
+plotVector(v, 'blue')
+plotVector(w, 'red', width = 2)
+```
+
 # Matrizes
 
-- Matrizes como transformações lineares
+Intuitivamente, matrizes são tabelas de números, algo como
+$$
+\mathbf{A} = \begin{bmatrix}
+	a & b \\
+	c & d \\
+	\end{bmatrix}
+$$
 
 # Autovetores e Autovalores
