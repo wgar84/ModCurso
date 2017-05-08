@@ -1,4 +1,6 @@
-## **592.5906** *Modularidade: conectando padrões e processos em evolução multivariada*
+---
+title: **592.5906** *Modularidade: conectando padrões e processos em evolução multivariada*
+---
 
 ### Preliminares
 
@@ -43,7 +45,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
-**Tutorial 1**: [Introdução ao R](Tutoriais/inicio.html)
+**Tutorial 1**: [*Introdução ao R*](Tutoriais/inicio.html)
 
 **Aula 2**: *Homologias, Caracteres e Mensurações* 
 
@@ -65,7 +67,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Wagner, G. P., M. D. Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
 
-**Tutorial 2**: [Básico de Álgebra Linear](Tutoriais/algelin.html)
+**Tutorial 2**: [*Básico de Álgebra Linear*](Tutoriais/algelin.html)
 
 **Aula 3**: *Caracterização de variação em dimensionalidade alta*
 
@@ -74,7 +76,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 + Componentes principais
 + Caracterização de variação direcional
 
-**Tutorial 3**: [Estimando matrizes e componentes principais](Tutoriais/matrizes.html)
+**Tutorial 3**: [*Estimando matrizes e componentes principais*](Tutoriais/matrizes.html)
 
 **Aula 4**: *Detecção de Padrões de Modularidade*
 

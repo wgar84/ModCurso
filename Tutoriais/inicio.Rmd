@@ -1,7 +1,7 @@
 ---
 title: "Comandos básicos do R"
 author: "Bárbara Costa"
-date: "07/05/2017"
+date: "08 de Maio de 2017"
 output: 
   html_document:
     code_folding: show
@@ -15,6 +15,32 @@ output:
       smooth_scroll: false
 
 ---
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text|Overpass+Mono:400|Lora:700');
+
+code.r{
+	font-family: "Overpass Mono";
+	font-size: 10pt;
+}
+
+body{
+	font-family: 'Crimson Text';
+	font-size: 16pt;
+}
+
+h1,h2,h3,h4{
+	font-family: 'Lora';
+}
+
+h5,h6{
+ 	font-family: 'Crimson Text';
+}
+</style>
+
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({  "HTML-CSS": { minScaleAdjust: 100, availableFonts: [] }  });
+</script>
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
