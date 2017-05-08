@@ -2,7 +2,18 @@
 title: "Comandos básicos do R"
 author: "Bárbara Costa"
 date: "07/05/2017"
-output: html_document
+output: 
+  html_document:
+    code_folding: show
+    highlight: pygments
+    number_sections: false
+    toc: true
+    theme: yeti
+    toc_depth: 2
+    toc_float: 
+      collapsed: false
+      smooth_scroll: false
+
 ---
 
 ```{r setup, include=FALSE}
