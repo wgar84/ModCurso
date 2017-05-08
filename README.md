@@ -23,7 +23,7 @@ Durante o curso, nós vamos introduzir alguns conceitos que são cruciais para o
 Se você quiser começar a entender a linguagem antes do curso iniciar, recomendamos o sítio <http://ecologia.ib.usp.br/bie5782/>, da disciplina básica de R oferecida pelo Departamento de Ecologia do IB-USP. 
 O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
-### Lista de Leituras
+### Aulas Teóricas
 
 **Aula 1**: *Níveis de modularidade: individual e populacional*
 
@@ -42,8 +42,6 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
   * Young, N. M., B. Hallgrímsson. “Serial Homology and the Evolution of Mammalian Limb Covariation Structure.” Evolution 59, no. 12 (2005): 2691–2704.
 
   * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
-
-**Tutorial 1**: [*Introdução ao R*](Tutoriais/inicio.html)
 
 **Aula 2**: *Homologias, Caracteres e Mensurações* 
 
@@ -65,16 +63,12 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Wagner, G. P., M. D. Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
 
-**Tutorial 2**: [*Básico de Álgebra Linear*](Tutoriais/algelin.html)
-
 **Aula 3**: *Caracterização de variação em dimensionalidade alta*
 
 + Caracteres e matrizes
 + Modelos lineares
 + Componentes principais
 + Caracterização de variação direcional
-
-**Tutorial 3**: [*Estimando matrizes e componentes principais*](Tutoriais/matrizes.html)
 
 **Aula 4**: *Detecção de Padrões de Modularidade*
 
@@ -109,3 +103,10 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Arnold, S. J. “Constraints on phenotypic evolution.” The American Naturalist 140 (1992): S85-S107.
 
+### Tutoriais
+
+**Tutorial 1**: [*Introdução ao R*](Tutoriais/inicio.html)
+
+**Tutorial 2**: [*Básico de Álgebra Linear*](Tutoriais/algelin.html)
+
+**Tutorial 3**: [*Estimando matrizes e componentes principais*](Tutoriais/matrizes.html)
