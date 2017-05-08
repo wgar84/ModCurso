@@ -33,7 +33,7 @@ Além disso, discutir:
  1. Qual o padrão modular de cada espécie? 
  2. Qual é a intensidade da associação entre os caractéres em cada espécie?
  
-## Covariâncias e correlações
+# Covariâncias e correlações
 
 Para entender como a associação entre os caracteres muda entre espécies, é preciso quantifica-lá. Para isso, vamos utilizar os conceitos de covariância e correlação. A covariância entre duas variáveis é definida como a média do produto dos desvios das médias das variáveis. Ou seja, se $\overline x$ e $\overline y$ são as médias dos caracteres $x$ e $y$, a covariâncias entre eles numa população é:
 
@@ -65,7 +65,7 @@ $$
 
 Essa quantidade varia entre -1 e 1, e mede o grau de associação entre duas variáveis numa escala absoluta. Correlações próximas de 1 indicam que os caracteres variam juntos e na mesma direção; correlações próximas de -1 indicam que os caracteres variam juntos mas em direções opostas; correlações próximas de zero indicam que os caracteres são independentes. A correlação pode ser comparada entre caracteres e populações diferentes. 
 
-## Medindo covariâncias e correlações no R
+# Medindo covariâncias e correlações no R
 
 Primeiro vamos carregar os dados:
 
@@ -109,7 +109,7 @@ ggplot(dentus, aes(humerus, ulna)) +
 
 A grande maioria dos pontos fica na região azul.
 
-## Medindo várias covariâncias no R
+# Medindo várias covariâncias no R
 
 Para que possamos comparar e interpretar a covariância ou correlação entre vários pares de caracteres simultaneamente, vamos utilizar uma notação matricial. Numa matriz de variância-covariância (ou simplesmente matriz de covariância), podemos representar todos os caracteres nas linhas e colunas, e assim, para saber a covariância entre um par de caracteres basta consultar a linha correspondente ao primeiro caráter na coluna correspondente ao segundo caráter. Para um conjunto de $p$ caracteres $\{z_1, z_2, ..., z_p\}$, podemos excrever sua matriz de covariância como:
 
@@ -130,7 +130,7 @@ cov(dentus[,1:4])
 
 Essa é a matriz de covariância total (sem separação por espécie) dos nossos dados. Onde está o valor de covariância entre humero e ulna que calculamos antes? Esse valor aparece quantas vezes na matriz? Por que? Você consegue calcular agora a matriz de correlação total? Tem um jeito fácil (função cor), um médio (função cov2cor), e um difícil (na unha)!
 
-## Medindo covariâncias de cada espécie
+# Medindo covariâncias de cada espécie
 
 Agora vamos medir as covariâncias e correlações dentro de cada espécie. Para isso, vamos aprender a escolher apenas algumas linhas de uma tabela de dados no R. Suponha que eu queira ver apenas as linhas que sejam da espécie A. Posso fazer isso com o comando:
 
@@ -146,7 +146,7 @@ Podemos agora usar esse conjunto de dados reduzido para calcular a matriz da esp
 
 Siga essa mesma lógica e crie objetos para as matrizes de covariância e correlação de todas as espécies.
 
-## Visualizando correlações
+# Visualizando correlações
 
 Podemos utilizar as matrizes de correlação para fazer representações gráficas da relação entre os pares de caracteres. Vamos carregar um pacote que faça isso:
 
@@ -163,11 +163,11 @@ superheat(cor_A, X.text = round(cor_A, 2))
 
 Olhe para todas as matrizes de correlação. Quais são os padrões modulares? Como esses padrões diferem entre as espécies? 
 
-## Componentes principais
+# Componentes principais
 
 A tecnica de componentes princiais (também conhecida como principal component analysis ou PCA) consiste em encontrar eixos ortogonais (com angulo de 90 graus entre eles) nos quais as variáveis medidas são não correlacionadas. Em outras palavras, nós descrevemos os individuos das nossas populações usando eixos relacionados às medidas tomadas em cada individuo, então um eixo corresponde ao comprimento do humero, outro eixo ao comprimento da ulna e assim por diante. Mas nesses eixos, que tem uma interpretação biológica clara, as medidas dos individuos em cada eixo são correlacionadas. 
 
-### Mudando os eixos
+## Mudando os eixos
 
 A analise de componentes principais consiste em encontrar eixos, criados a partir dos eixos originais, nos quais os individuos não são correlacionados. Antes de chegar nos componentes principais, vamos entender o que significa mudar os dados de eixos. Podemos ter, por exemplo, um eixo definido como uma combinação entre humero e ulna, e outro eixo correspondente à diferença entre humero e ulna. Vamos visualizar isso graficamente em duas dimensões, primeiro representando nos eixos originais as medidas de humero e ulna da espécie A. Vamos centralizar as medidas no zero para facilitar o gráfico, de modo que os valores nos eixos x e y vão ser diferenças das médias:
 
@@ -236,7 +236,7 @@ cor(dentus_A_rot$x, dentus_A_rot$y)
 
 Ou seja, eles ainda são correlacionados. Qual seriam os eixos que deixam nossos dados não correlacionados?
 
-### Meu primeiro PCA
+## Meu primeiro PCA
 
 A analise de componentes principais encontra esses eixos não correlacionados usando a matriz de covariância. Por enquanto, vamos continuar com apenas duas medidas (humero e ulna da especie A) e tentar encontrar os eixos onde essas duas medidas não são correlacionadas. Para isso, vamos encontrar a matriz de covariância entre essas duas medidas:
 
@@ -295,7 +295,7 @@ round(cor(dentus_A_rot_PCs$x, dentus_A_rot_PCs$y), 8)
 ```
 
 
-## PCA em todas as espécies
+# PCA em todas as espécies
 
 Agora vamos partir pra um exemplo de verdade e calcular os PCs dos nossos quatro caracteres para todas as espécies. Para isso, vamos calcular novamente nossas matrizes de covariância:
 
@@ -328,7 +328,7 @@ Note como todos os elementos desse componente tem o mesmo sinal e magnitude pare
 
 Podemos olhar pra o segundo componente, que tem valores positivos para humero e ulna, e negativos para femur e tibia. Ou seja, é uma direção ao longo da qual humero e ulna aumentam enquanto femur e tibia diminuem. Esse tipo de componente é um contraste entre os dois grupos de caracteres.
 
-## Values?
+# Values?
 
 Para entender o que são os values no objeto de saida da eigen(), vamos projetar nossos dados nos PCs:
 
@@ -351,7 +351,7 @@ Comparou?
 
 São os mesmos valores. Os values são as variâncias nas direções dos componentes principais. 
 
-## O primeiro componente principal
+# O primeiro componente principal
 
 Vocês leram sobre linhas de menor resistencia evolutiva no artigo do Schluter, e agora podemos entender porque essa linha corresponde ao primeiro componente principal. A quantidade de variação total na população é sempre preservada em todas essas analises que fizemos, afinal são só rotações. Para conferir isso, vamos somar as variâncias originais e somar as variâncias saindo da eigen():
 
@@ -362,7 +362,7 @@ sum(PCs_A$values)
 
 A diferença é que usando os PCs como eixos para representar nossas variáveis, a variação é independente em cada eixo. Com isso, podemos simplesmente comparar as variâncias para saber em qual eixo está a maior parte da variação. Logo, o PC com maior variância corresponde ao eixo com maior variação fenotípica nos dados. Como evolução depende da variação disponível, a direção do primeiro componente principal é a direção que responde mais facilmente à seleção, ou seja, evolução é mais fácil ao longo do primeiro componente principal.
 
-## PCA como analise exploratória
+# PCA como analise exploratória
 
 O objetivo dessa aula é só encontrar os PCs para todas as espécies, e vocês já sabem como faz isso nessa altura. Fora de biologia evolutiva, é comum PCA ser utilizado como uma analise exploratória e de redução dimensional. A ideia geral é sempre a mesma (encontrar eixos com variação independente), e eventualmente descrever os dados utilizando menos variáveis. É comum, por exemplo, utilizar apenas os scores nos primeiros componentes principais por eles responderem por grande parte da variação total. 
 

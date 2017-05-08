@@ -1,0 +1,212 @@
+---
+title: "Comandos básicos do R"
+author: "Bárbara Costa"
+date: "07/05/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Criar um diretório do curso
+
+A primeira coisa a se fazer é criar uma pasta para você armazenar todos os arquivos deste curso.
+Depois de criar a pasta para o curso, faca o seguinte:
+Verifique o diretório de trabalho atual. Obs: Para rodar o comando getwd() clique crtl + enter no windows ou command + enter no mac. Siga da mesma forma para qualquer outro comando que quiser rodar abaixo.
+
+```{r}
+getwd() 
+
+```
+
+Se necessário, mude o diretorio de trabalho (para trabalhar dentro da sua pasta do curso). Para isso, use o comando setwd() e o caminho do seu computador até o diretório criado. Exemplo: **setwd("~/Desktop/disciplina")**. Dica: use "" e a tecla tab para ajudar a visualizar os caminhos do computador.  
+Se usou o comando **setwd()** verifique em seguida o diretório atual:
+```{r}
+getwd()
+```
+
+Você também tem a opção de fazer isso utilizando a janela no canto inferior direito do RStudio da seguinte forma: selecione a pasta que deseja e na opção  **More** selecione **Set As Working Directory**.
+
+## Carregue alguns pacotes
+ observação: se ainda não instalou algum desses pacotes, faça isso primeiro. Exemplo: **install.packages("ggplot2")**
+```{r warning=FALSE, message=FALSE}
+
+#carregando
+
+require (ggplot2)
+require (evolqg) 
+```
+
+Pergunta: quando voce roda os dois comandos abaixo, o que vc acontece?
+```{r warning=FALSE, message=FALSE}
+# familiarize-se com o pacote
+
+help(package="ggplot2") 
+help(package="evolqg")
+```
+
+## Algumas operacoes aritimeticas basicas no R!
+```{r warning=FALSE, message=FALSE}
+4 + 9
+4 - 5
+4 * 5
+4 / 5
+4^5
+2^2
+(4 + 5 ) * 7 - (36/18)^3
+(4 + 5  * 7 - 36/18)^3
+# raiz quadrada
+sqrt(9) 
+# logaritmo natural ou neperiano
+log(10) 
+# logaritmo base 10
+log(10, base = 10) 
+# também logaritmo de base 10
+log10(10)
+# exponencial
+exp (1) 
+```
+Exercício: crie dois objetos, a e b, para as duas primeiras linhas acima (4+9 e 4-5). Faça a soma da diferença desses dois objetos, elevado ao quadrado.
+Resposta: 196
+
+## Criação de Vetores
+Para criar um vetor, podemos usar a função c (c = colar, concatenar). Essa função simplesmente junta todos os argumentos dados a ela, formando um vetor:
+
+```{r warning=FALSE, message=FALSE}
+vector.a <- c(1, 10, 3.4, 16, 23, 91, 46 )
+vector.b <- c(1, 10, 3.4, pi, pi/4, exp(-1), log( 2.23 ), sin(pi/7) )
+vector.c <- c(6.1, 7.5, 7.0, 8.8, 9.1, 6.3)  
+```
+
+Exercício: Você criou alguns objetos. Como vcs podem visualizá-lo no RStudio? Qual a classe desses objetos?
+Agora, crie um vetor com 6 elementos da classe character. Dica use aspas.
+Como vc apagaria esse vetor que acabou de criar? Dica: veja o help da função **rm**.
+
+## Vetores: Operações Estatísticas
+Faça a média do vetor.a, variância do vetor.b, busque pelo maior valor do vetor.c e, por fim,
+faça o desvio padrão do vetor.a. Dica! Use a função help para pesquisar sobre essas operações:
+?mean
+help(mean)
+?var
+help(sd)
+
+Respostas:
+media = 27.2
+variância = 10.6227
+máximo = 9.1
+desvio padrão = 31.92616
+
+Execute o comando abaixo e veja o help dela. O que ela fez?
+summary(vector.a)
+
+## Vamos trabalhar com os Tipos de Objetos no R
+## Vetor:
+
+```{r warning=FALSE, message=FALSE}
+meu.vetor <- c(10.5,11.3,12.4,5.7)
+meu.vetor
+```
+
+Coloque nomes para cada elemento do objeto meu.vetor. Dica: use a função **names**.
+```{r warning=FALSE, message=FALSE}
+names(meu.vetor) <- c("a", "b", "c", "d")
+```
+
+Usando a indexação busque apenas o segundo elemento do objeto "meu.vetor". 
+Dica: use colchetes.
+
+## Matriz:
+
+```{r warning=FALSE, message=FALSE}
+
+minha.matriz <- matrix(data=1:12,nrow=3,ncol=4)
+minha.matriz
+args(matrix)
+```
+
+Olhe o help da função matrix e olhe também os argumentos dela. O que siginifica o argumento "byrow"?
+Crie um objeto minha.outra.matriz agora preenchendo as matrizes pelas linhas.
+
+## Array:
+
+```{r warning=FALSE, message=FALSE}
+my.array <- array(1:36, dim=c(3,4,3))
+my.array
+```
+
+### Data frame:
+
+```{r warning=FALSE, message=FALSE}
+nomes <- c("Didi","Dedé","Mussum","Zacarias")
+ano.nasc <- c(1936,1936,1941,1934)
+vive <- c("V","V","F","F")
+trapalhoes <- data.frame(nomes,ano.nasc,vive)
+trapalhoes
+```
+
+Execute as funções **head()** e **tail()** para o objeto trabalhoes. Usando head(), solicite as 10 primeiras linhas de trapalhoes.
+Dica: olhe o help da função. Com qual função você olharia a estrutura do objeto? Dica: olhe o help da função **str**.
+
+## Lista:
+
+```{r warning=FALSE, message=FALSE}
+minha.lista <- list(um.vetor=1:5, uma.matriz=matrix(1:6,2,3), um.dframe=data.frame(seculo=c("XIX","XX","XXI"),inicio=c(1801,1901,2001)))
+```
+
+Abra o objeto minha.lista. Com qual função você observaria a estrutura desta lista? Use também a função **names** e veja o resultado.
+
+
+## Algumas funções básicas no R
+Execute a função que indica a classe dos objetos minha.lista, trapalhoes, my.array e minha.matriz.
+Depois, execute os comandos abaixo e veja o que cada um faz. Não deixe de ver também o help de cada uma das funções. 
+
+```{r warning=FALSE, message=FALSE}
+# atributo de um objeto
+attributes(minha.lista) 
+attributes(trapalhoes)
+attributes(my.array)
+attributes(minha.matriz)
+
+# dimensões do objeto
+dim(my.array) 
+
+# numero de linhas 
+
+nrow(minha.matriz)
+# número de colunas 
+
+ncol(minha.matriz) 
+```
+
+## Vamos trabalhar com um objeto do pacote datasets
+Observação: se ainda não instalou esse pacote, faça isso primeiro. Você já sabe como fazer para instalar um pacote :). Lembrete: use aspas.
+Pronto! Com a função data carregue os dados do objeto iris:
+
+```{r warning=FALSE, message=FALSE}
+data(iris)
+```
+
+Agora, abra o objeto iris e olhe o conteúdo dele.
+Explore o objeto iris com o comando **str** e indique qual a classe do objeto e nomes das partes.
+
+## Indexação:
+Vamos selecionar colunas específicas de iris.
+
+```{r warning=FALSE, message=FALSE}
+iris$Sepal.Length
+iris$Sepal.Width
+iris$Species
+```
+
+Você fazer o mesmo usando colchetes. Faça o teste. Lembre-se de usar as aspas dentro dos colchetes se for designar os nomes das colunas ou coloque simplesmente o número dela.
+
+Agora, busque todas as linhas da coluna 3 do objeto minha.matriz. Você já sabe fazer :) 
+
+Use colnames(minha.matriz) <- c("a", "b", "c", "d") para colocar nomes nas colunas da matriz. Abra o objeto minha.matriz de novo para conferir. Em seguida, busque as linhas 1 e 3, da coluna "d".
+
+Busque no objeto trapalhoes a sua classe. Em seguida, busque todas as linhas da coluna "nomes".
+
+Agora, busque a linha 4 de todas as colunas.
+
+Fim!

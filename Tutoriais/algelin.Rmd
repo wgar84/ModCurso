@@ -98,14 +98,14 @@ plotVector(w, 'red')
 ```
 
 
-**Importante**: Idealmente, para todo código neste tutorial, seria bom você colar esse código em um *script* no RStudio e rodar o código mudando algumas coisas só para ver o que acontece.
+**Importante**: Idealmente, para todo código neste tutorial, seria bom você colá-lo em um *script* no RStudio e executá-lo mudando algumas coisas só para ver o que acontece.
 No caso deste código acima, você pode plotar outros vetores, por exemplo, ou talvez mudar as cores.
 Em alguns casos isso será estimulado através de uma ou mais perguntas, mas a sua curiosidade é fundamental na tarefa de se apropriar dos conceitos explorados aqui.
 Por exemplo, você não fica tentado a descobrir o que o parâmetro *asp* faz na chamada da função plot?
 
 Uma terceira concepção é mais próxima da realidade dos matemáticos, que em geral pensam as coisas na forma de conjuntos, as operações que podemos fazer com elementos neste conjunto, e as propriedades destas operações.
 Nesta concepção, a representação mais adequada para um vetor é aquela que facilita sua compreensão do que está acontecendo.
-No entanto, é importante notar que, qualquer que seja a operação feita com um vetor ou vetores, haverá duas formas de : uma relacionada a representá-los sob a forma de listas de números, outra relacionada a representá-los como setas.
+No entanto, é importante notar que, qualquer que seja a operação feita com um vetor ou vetores, haverá duas formas de imaginar esta operação: uma relacionada a representá-los sob a forma de listas de números, outra relacionada a representá-los como setas.
 
 Inicialmente, podemos fazer duas coisas com vetores: somá-los e multiplicá-los por números.
 Para somar dois vetores, a forma mais simples de pensar a princípio é simplesmente somando suas entradas correspondentes individualmente:
@@ -156,6 +156,42 @@ A norma de um vetor pode ser calculada em duas dimensões pela relação de Pit�
 $$
 \|\vec{u}\| = \sqrt{u_1^2 + u_2^2} 
 $$
+mas, independente do número de dimensões representadas no vetor, a norma de um vetor é obtida como sendo a raiz quadrada da soma de todas as coordenadas ao quadrado.
+
+Uma operação que fazemos comumente é *normalizar* um vetor, isto é, dividir os elementos do vetor por sua norma, de modo que a norma deste novo vetor será unitária.
+
+### Exercício 2
+Leia atentamente e execute o código a seguir:
+
+```{r circle_sample, eval = FALSE}
+require(evolqg)
+
+### o pacote evolqg possui uma função que normaliza um vetor
+?Normalize
+
+### vamos gerar alguns vetores aleatórios em duas dimensões
+
+### primeiro, vamos gerar alguns números advindos de uma distribuição normal padrão
+rand.vec <- rnorm(100)
+
+### agora, vamos organizar esses números como vetores em uma tabela
+rand.vec <- matrix(rand.vec, nrow = 50, ncol = 2)
+
+### cada vetor aleatório corresponde a uma linha desta tabela
+### quero normalizar cada vetor, utilizando a função aaply
+norm.vec <- aaply(rand.vec, 1, Normalize)
+
+### agora, vamos plotar estes vetores
+### aqui, não vou me preocupar em representá-los como setas
+### apenas o ponto no plot entre suas coordenadas é suficiente
+plot(norm.vec, asp = 1, pch = 20)
+```
+
+1. Os pontos parecem desenhar uma forma em particular? Que forma é essa?
+
+2. Aumente o número de vetores gerados para mil.
+
+3. Você consegue elaborar uma razão para esta forma estar sendo gerada?
 
 # Matrizes
 
