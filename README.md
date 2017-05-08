@@ -1,6 +1,4 @@
----
-title: **592.5906** *Modularidade: conectando padrões e processos em evolução multivariada*
----
+## **592.5906** *Modularidade: conectando padrões e processos em evolução multivariada*
 
 ### Preliminares
 
