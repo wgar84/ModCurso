@@ -1,0 +1,187 @@
+---
+title: "Modularidade e Consequências Evolutivas"
+author: "Daniela M. Rossoni"
+date: "May 12, 2017"
+output: 
+  html_document:
+    code_folding: show
+    highlight: pygments
+    number_sections: false
+    toc: true
+    theme: yeti
+    toc_depth: 2
+    toc_float: 
+      collapsed: false
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Objetivos
+
+Nessa aula prática vamos explorar como as associações entre caracteres morfológicos podem afetar os potenciais evolutivos das espécies. Para isso vamos utilizar as ferramentas analíticas desenvolvidas por Hansen & Houle (2008) apresentadas em aula teórica.
+
+## Contextualização
+
+Nas aulas práticas anteriores estimamos as matrizes de covariância e as matrizes de correlação para as cinco espécies presentes na base de dados dentus do pacote evolqg. 
+
+Observando as matrizes de correlação, nós detectamos alguns padrões modulares para cada espécie e discutimos como esses padrões diferem entre elas. 
+
+Além disso, calculamos o índice de magnitude de integração pra cada espécie.
+Lembrem-se que este índice é obtido a partir das matrizes de correlação como sendo a média dos coeficientes de correlação ao quadrado.
+  
+ 
+Na a aula de hoje nós vamos utilizar:
+
+1. As matrizes de covariância por espécie;
+
+2. As matrizes de correlação por espécie;
+
+3. O índice de magnitude geral de integração por espécie;
+
+Se vocês não salvaram os objetos criados no R nas aula anteriores, terão que rodar novamente as funções para obtê-los. Então vamos lá!
+        
+
+```{r, warning=FALSE, message=FALSE}
+# Carregando alguns pacotes 
+
+require (evolqg)
+require (ggplot2)
+require (dplyr)
+require (magrittr)
+
+# Carregando os dados que vamos utilizar em aula
+
+data (dentus)
+```
+
+Calculando as matrizes de correlação para cada espécie:
+
+```{r}
+cor_A = cor(dentus[ dentus$species == "A", 1:4])
+cor_B = cor(dentus[ dentus$species == "B", 1:4])
+cor_C = cor(dentus[ dentus$species == "C", 1:4])
+cor_D = cor(dentus[ dentus$species == "D", 1:4])
+cor_E = cor(dentus[ dentus$species == "E", 1:4])
+```
+
+Calculando as matrizes de covariância para cada espécie:
+
+```{r}
+cov_A = cov(dentus[ dentus$species == "A", 1:4])
+cov_B = cov(dentus[ dentus$species == "B", 1:4])
+cov_C = cov(dentus[ dentus$species == "C", 1:4])
+cov_D = cov(dentus[ dentus$species == "D", 1:4])
+cov_E = cov(dentus[ dentus$species == "E", 1:4])
+```
+
+Calculando o índice da magnitude de integração para cada espécie
+
+```{r}
+R2_A = CalcR2(cor_A) 
+R2_B = CalcR2(cor_B) 
+R2_C = CalcR2(cor_C) 
+R2_D = CalcR2(cor_D) 
+R2_E = CalcR2(cor_E) 
+```
+
+Agora vamos rodar a função que faz aqueles plots de correlação:
+
+```{r, warning=FALSE, message=FALSE}        
+library(ggplot2)
+library(reshape2)
+if(!require(viridis)) install.packages("viridis")
+library(viridis)
+plotMatrix <- function (corMat, file = NULL) {
+        diag(corMat) <- NA
+        n_traits = nrow(corMat) 
+        myPalette <- viridis(50)
+        ## Se quiser uma paleta All American, use essa linha em vez da anterior
+        #myPalette <- colorRampPalette(c("blue", "white", "red"))(n = 50)
+        m.rs = melt(corMat) 
+        m.rs$Var1 <- factor(m.rs$Var1, levels = m.rs$Var1[n_traits:1])
+        m.rs.position = m.rs
+        m.rs.position$Var1 <- as.numeric(m.rs.position$Var1)
+        m.rs.position$Var2 <- as.numeric(m.rs.position$Var2)
+        m.rs.position$value= round(m.rs.position$value, 2)
+        m.rs.position$value[is.na(m.rs.position$value)] <- levels(m.rs$Var1)[n_traits:1]
+        p <- 
+                ggplot (m.rs) +
+                geom_tile(aes(x = Var2, y = Var1, fill = value)) +
+                scale_fill_gradientn(name = '', colours = myPalette, limits = c(-0.15, 1)) +
+                labs(x = NULL, y = NULL) + 
+                geom_text(data = m.rs.position, aes(x = Var2, y = Var1, label = value)) + 
+                theme_bw()
+        if(!is.null(file)) cowplot::save_plot(plot = p, file)
+        return(p)
+}
+```
+
+E finalmente, vamos olhar atentamente cada um dos plots de correlação e os respectivos valores de magnitude de integração calculados.
+
+Espécie A
+```{r} 
+plotMatrix(cor_A)
+CalcR2(cor_A)
+```
+
+Faça a mesma coisa para o restante das espécies!
+
+A função MeanMatrix Statistics do pacote pode ser utilizada para calcular todas as métricas de consequências evolutivas que exploramos em aula teórica, tais como flexibilidade, restrição, evolvabilidade e respondabilidade.
+
+Mas antes de calcularmos todas estas métricas, vamos discutir alguns pontos tendo como ponto de partida os resultados que geramos há pouco.
+
+## Questões
+
+Já que sabemos os valores de magnitude de integração geral, o grau de modularidade de cada uma das espécies, e que temos embasamento teórico sobre o tema, quais são as nossas expectativas em relação às consequências evolutivas para cada espécie?
+
+Por exemplo, para a espécie E que é muito desintegrada, qual é a expectativa em termos de suas flexibilidades e restrições evolutivas?
+
+E para a espécie D?
+
+## Estimativas das consequências evolutivas  
+
+Agora utilize a função Mean Matrix statistics e avalie os resultados encontrados para cada espécie comparando-os com suas expectativas.
+
+Explore a função no help para compreender quais os argumentos que a função recebe e o que ela calcula:  
+
+```{r}         
+?MeanMatrixStatistics
+```
+
+Percebam que ela calcula também o índice de magnitude geral de integração.
+Certamente você está se perguntando agora: “Mas esse índice não é calculado com a matriz de correlação? A função pede a matriz de covariância… algo deve estar errado”.
+
+Ótima observação! 
+Mas não se preocupe pois internamente para algumas estimativas, a funçao transforma a matriz de covariância em uma matriz de correlação utilizando a função cov2cor. 
+
+Agora sim, você pode calcular as métricas para cada espécie da seguinte maneira:
+
+```{r}         
+MMS_A <- MeanMatrixStatistics(cov_A, iterations = 1000, full.results = F, parallel = FALSE)
+```
+
+Mas se quiser, você pode aplicar a função de uma vez para todas as espécies: 
+
+```{r}        
+        MMS_total <- dlply(dentus, ~ species, '[', 1:4) %>% 
+        llply(cov) %>% 
+        ldply(MeanMatrixStatistics, .id = 'Species')
+```
+
+Agora vamos visualizar graficamente as correlacoes entre magnitude de integracao e as medidas de consequências evolutivas e vamos discutir esses resultados:
+
+```{r}  
+r2_flex <- ggplot(MMS_total, aes(x=MeanSquaredCorrelation, y=flexibility , colour = Species, label = Species), size=20)+ geom_point(size=3)+ theme_bw() + ylab("flexibilidade")+ xlab("magnitude de integracao") 
+
+r2_restr <-ggplot(MMS_total, aes(x=MeanSquaredCorrelation, y=constraints , colour = Species, label = Species), size=20)+ geom_point(size=3)+ theme_bw() + ylab("restricao")+ xlab("magnitude de integracao") 
+
+restr_flex <- ggplot(MMS_total, aes(x=constraints, y=flexibility , colour = Species, label = Species), size=20)+ geom_point(size=3)+ theme_bw() + ylab("flexibilidade")+ xlab("restricao") 
+
+restr_pc1 <- ggplot(MMS_total, aes(x=constraints, y=pc1.percent , colour = Species, label = Species), size=20)+ geom_point(size=3)+ theme_bw() + ylab("variacao PC1")+ xlab("restricao") 
+
+flex_pc1 <- ggplot(MMS_total, aes(x=flexibility, y=pc1.percent , colour = Species, label = Species), size=20)+ geom_point(size=3)+ theme_bw() + ylab("variacao PC1")+ xlab("flexibilidade") 
+```
+

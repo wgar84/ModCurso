@@ -1,8 +1,18 @@
 ---
 title: "Detectando modularidade"
 author: "Bárbara M. A. Costa"
-date: "08/05/2017"
-output: html_document
+date: "10/05/2017"
+output: 
+  html_document:
+    code_folding: show
+    highlight: pygments
+    number_sections: false
+    toc: true
+    theme: yeti
+    toc_depth: 2
+    toc_float: 
+      collapsed: false
+      smooth_scroll: false
 ---
 
 ```{r setup, include=FALSE}

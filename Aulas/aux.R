@@ -9,14 +9,13 @@ render('../Tutoriais/algelin.Rmd', output_dir = '../Tutoriais', output_format = 
 
 render('../Tutoriais/detectando_modularidade.Rmd', output_dir = '../Tutoriais', output_format = 'html_document')
 
-
+render('../Tutoriais/consequencias_evolutivas.Rmd', output_dir = '../Tutoriais', output_format = 'html_document')
 
 render('../Tutoriais/matrizes.Rmd', output_dir = '../Tutoriais')
 
 render('../Tutoriais/inicio.Rmd', output_dir = '../Tutoriais')
 
 render('../index.Rmd', output_dir = '../')
-
 
 browseURL('02/index.html')
 
