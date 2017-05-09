@@ -13,19 +13,26 @@ output:
     toc_float: 
       collapsed: false
       smooth_scroll: false
+  pdf_document:
+    latex_engine: xelatex
+header-includes:
+  - \usepackage[brazilian]{babel}
+  - \usepackage[utf8]{inputenc}
+  - \usepackage[bitstream-charter]{mathdesign}
+  - \usepackage{setspace}
+  - \doublespacing
+fontsize: 14pt
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-\usepackage{amsmath}
-\usepackage{mathtools}
-
 \newcommand{\ihat}{\boldsymbol{\hat \imath}}
 \newcommand{\jhat}{\boldsymbol{\hat \jmath}}
-\newcommand{\u}{\boldsymbol{u}}
-\newcommand{\v}{\boldsymbol{v}}
+\newcommand{\uvec}{\boldsymbol{\vec{u}}}
+\newcommand{\vvec}{\boldsymbol{\vec{v}}}
+\newcommand{\wvec}{\boldsymbol{\vec{w}}}
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Overpass+Mono:400|Lora:700');
@@ -76,7 +83,7 @@ Para eles, várias quantidades de interesse são naturalmente representadas como
 Cada valor na concatenação acima pode ser concebido como a coordenada deste vetor em um eixo, e podemos representar graficamente cada vetor como uma seta que sai da origem destas coordenadas.
 Por exemplo, os vetores
 $$
-\u = (0, -4); \quad \v = (2, 2); \quad \boldsymbol{w} = (-1, 3)
+\uvec = (0, -4); \quad \vvec = (2, 2); \quad \wvec = (-1, 3)
 $$
 podem ser representados graficamente no R usando o seguinte código:
 ```{r draw_vector, fig.asp = 1}
@@ -119,8 +126,8 @@ No entanto, é importante notar que, qualquer que seja a operação feita com um
 Inicialmente, podemos fazer duas coisas com vetores: somá-los e multiplicá-los por números.
 Para somar dois vetores, a forma mais simples de pensar a princípio é simplesmente somando suas entradas correspondentes individualmente:
 $$
-\u = (u_1, u_2); \v = (v_1, v_2) 
-\Rightarrow \u + \v = (u_1 + v_1, u_2 + v_2)
+\uvec = (u_1, u_2); \vvec = (v_1, v_2) 
+\Rightarrow \uvec + \vvec = (u_1 + v_1, u_2 + v_2)
 $$
 Além disso, podemos pensar nesta soma como uma concatenação de ações.
 Neste código, mostramos que a soma de dois vetores, quando representados sob a forma de setas, corresponde a andar na direção e distância dada pelo primeiro vetor, depois andar a direção e distância dada pelo segundo vetor.
@@ -150,9 +157,9 @@ plotVector(u + v, 'purple', width = 2)
 
 Multiplicar um vetor por um número é também bastante direto, basta apenas multiplicar suas entradas individuais pelo número:
 $$
-\u = (u_1, u_2) \Rightarrow \alpha \cdot \u = (\alpha \cdot u_1, \alpha \cdot u_2)
+\uvec = (u_1, u_2) \Rightarrow \alpha \cdot \uvec = (\alpha \cdot u_1, \alpha \cdot u_2)
 $$
-Neste contexto, chamamos de *escalar* este valor $\alpha$ que multiplica o vetor $\u$.
+Neste contexto, chamamos de *escalar* este valor $\alpha$ que multiplica o vetor $\uvec$.
 
 ### Exercício 1
 Tente modificar os pedaços de código utilizados anteriormente para representar graficamente o produto entre vetores e escalares. Depois, responda as seguintes perguntas:
@@ -166,7 +173,7 @@ Tente modificar os pedaços de código utilizados anteriormente para representar
 Podemos caracterizar um vetor por sua **norma**, ou seja, o comprimento da seta que representa o vetor, e por sua **direção**, ou seja, para onde o vetor aponta.
 A norma de um vetor pode ser calculada em duas dimensões pela relação de Pitágoras:
 $$
-\|\u\| = \sqrt{u_1^2 + u_2^2} 
+\|\uvec\| = \sqrt{u_1^2 + u_2^2} 
 $$
 mas, independente do número de dimensões representadas no vetor, a norma de um vetor é obtida como sendo a raiz quadrada da soma de todas as coordenadas ao quadrado.
 
@@ -211,8 +218,8 @@ plot(norm.vec, asp = 1, pch = 20)
 Bases são um conceito bastante simples, mas que possui muitas consequencias importantes.
 De maneira simples, posso escrever um vetor qualquer no espaço bidimensional da seguinte forma:
 $$
-\u = \begin{bmatrix} u_1 \\ u_2 \\ \end{bmatrix} \Rightarrow 
-\u = u_1 \cdot \begin{bmatrix} 1 \\ 0 \\ \end{bmatrix} +
+\uvec = \begin{bmatrix} u_1 \\ u_2 \\ \end{bmatrix} \Rightarrow 
+\uvec = u_1 \cdot \begin{bmatrix} 1 \\ 0 \\ \end{bmatrix} +
 	u_2 \cdot \begin{bmatrix} 0 \\ 1 \\ \end{bmatrix}
 $$
 introduzindo também a notação de vetores como matrizes-coluna.
@@ -224,9 +231,9 @@ $$
 \jhat = \begin{bmatrix} 0 \\ 1 \\ \end{bmatrix}.
 $$
 Juntos, $\ihat$ e $\jhat$ constituem o que chamamos de *base canônica* do espaço bidimensional (que, pra economizar palavras, vamos chamar de $\mathbb{R}^2$ a partir de agora).
-Daí podemos escrever $\u$ como
+Daí podemos escrever $\uvec$ como
 $$
-\u = u_1 \ihat + u_2 \jhat
+\uvec = u_1 \ihat + u_2 \jhat
 $$
 que é mais uma forma de representar um vetor.
 Como $\ihat$ e $\jhat$ podem ser combinados de modo a produzir qualquer vetor no $\mathbb{R}^2$, dizemos que estes vetores *geram* o espaço.
@@ -239,12 +246,12 @@ Existem pares de vetores que não são capazes de fazê-lo?
 
 1. Escreva o vetor $(5, 1)$ como uma combinação linear dos vetores $(-2, 1)$ e $(1, 3)$.
 
-*Dica*: Vamos escrever o problema:
++ *Dica*: Vamos escrever o problema:
 $$
 \begin{bmatrix} 5 \\ 1 \\ \end{bmatrix} = \alpha \begin{bmatrix} -2 \\ 1 \\ \end{bmatrix} + 
 \beta \begin{bmatrix} 1 \\ 3 \\ \end{bmatrix}.
 $$
-É possível achar valores para $\alpha$ e $\beta$?
++ É possível achar valores para $\alpha$ e $\beta$?
 
 ```{r plot_soln, eval = FALSE}
 u <- c(-2, 1)
@@ -301,7 +308,164 @@ $$
 \mathbf{A} = \begin{bmatrix}
 	a & b \\
 	c & d \\
-	\end{bmatrix}
+	\end{bmatrix}.
 $$
+Neste tutorial, gostaria de enfatizar seu papel geométrico como transformação linear, ao invés de focar na álgebra, como fazem na Educação Básica.
+Neste contexto, o que são trasformações? 
+Você pode pensar em uma função, como $f(x) = x^2$, que recebe um número como entrada e retorna um número como saída.
+Matrizes podem ser pensadas como funções quando observamos seu efeito sobre um vetor.
+Assim, definimos uma função $f(\vvec) = \mathbf{A} \vvec$, que recebe um vetor $\vvec$ e retorna um outro vetor $\wvec= f(\vvec)$.
+Neste momento inicial, não importa como exatamente computamos esta função.
+Por exemplo, considere a matriz
+$$
+\mathbf{R} = 
+	\begin{bmatrix} 
+		0 & 1 \\
+		-1 & 0 \\
+	\end{bmatrix}.
+$$
+Vamos ver o que ela faz com um vetor?
+Ou com vários vetores.
+```{r rotation, fig.asp = 2}
+## primeiro vamos definir R
+R <- matrix(c(0, 1,
+              -1, 0), byrow = TRUE, nrow = 2)
 
-# Autovetores e Autovalores
+## e dar uma olhada nesta matriz
+R
+
+## vamos definir alguns vetores
+u <- c(3, 2)
+v <- c(-1, 4)
+w <- c(0, -2)
+
+## e operar sobre eles com R
+f.u <- R %*% u
+f.v <- R %*% v
+f.w <- R %*% w
+
+## essa operação aí em cima representa a multiplicação de matrizes e vetores
+## por isso eu disse que você não precisa se preocupar com isso
+
+## vou usar esse código bastante, então vamos fazer uma pequena função
+plotEmptyCanvas <- function()
+    {
+        plot(NA, xlim = c(-6, 6), ylim = c(-6, 6), xlab = '', ylab = '', asp = 1)
+        for(i in (-6):6)
+        {
+            abline(h = i, col = ifelse(i != 0, 'grey', 'black'))
+            abline(v = i, col = ifelse(i != 0, 'grey', 'black'))
+        }
+    }
+
+par(mfrow = c(2, 1))
+
+# plotar os vetores que entram
+plotEmptyCanvas()
+plotVector(u, 'darkgreen')
+plotVector(v, 'blue')
+plotVector(w, 'red')
+
+# e os vetores que saem
+plotEmptyCanvas()
+plotVector(f.u, 'darkgreen')
+plotVector(f.v, 'blue')
+plotVector(f.w, 'red')
+```
+
+Esta matriz rotaciona cada vetor 90 graus em sentido horário.
+Não estende ou muda os ângulos entre os vetores.
+Naturalmente, $\mathbf{R}$ é uma *matriz de rotação*.
+O próximo exemplo deixa mais claro o que entendemos por transformação linear.
+Considere a matriz
+$$
+\mathbf{S} = 
+	\begin{bmatrix} 
+		2 & 1 \\
+		0 & 1 \\
+	\end{bmatrix}.
+$$
+Vamos ver o que ela faz com um quadrado.
+
+```{r shear, fig.asp = 2}
+## vamos desenhar um quadrado
+quadrado <- matrix(c(0, 0,
+                     0, 2,
+                     2, 2,
+                     2, 0), byrow = TRUE, nrow = 4)
+
+S <- matrix(c(2, 1,
+              0, 1), byrow = TRUE, nrow = 2)
+
+f.quadrado <- S %*% t(quadrado)
+## esse função t() troca as linhas pelas colunas da matriz quadrado
+## isso garante que cada aresta do quadrado seja um vetor coluna pra ser multiplicado
+
+f.quadrado <- t(f.quadrado)
+## cada aresta do quadrado transformado é uma linha agora
+
+## vamos também olhar para o que acontece com os vetores que definem a base canônica do R2
+ihat <- c(1, 0)
+jhat <- c(0, 1)
+
+f.ihat <- S %*% ihat
+f.jhat <- S %*% jhat
+
+par(mfrow = c(2, 1))
+
+plotEmptyCanvas()
+points(quadrado, type = 'b')
+plotVector(ihat, 'purple')
+plotVector(jhat, 'orange')
+
+plotEmptyCanvas()
+points(f.quadrado, type = 'b')
+plotVector(f.ihat, 'purple')
+plotVector(f.jhat, 'orange')
+
+```
+
+Essa matriz distorce o quadrado, o transformando em um paralelogramo, mas note que esta distorção preserva o paralelismo entre os lados da figura resultante.
+Esta propriedade é uma das condições que define uma transformação *linear*. 
+Linhas retas na entrada se mantém retas na saída.
+A outra propriedade importante é que a origem deve ficar onde está após passar pela transformação, mas para estas funções definidas apenas como um um produto entre matriz e vetor, isto é garantido.
+
+No exemplo, também aproveitamos e mostramos o destino dos vetores $\ihat$ e $\jhat$ após a transformação.
+Estes vetores vão parar em
+$$
+f(\ihat) = \begin{bmatrix} 2 \\ 0 \\ \end{bmatrix}; 
+f(\jhat) = \begin{bmatrix} 1 \\ 1 \\ \end{bmatrix}; 
+$$
+que são exatamente as colunas da matriz $\mathbf{S}$!
+De fato, podemos definir qualquer transformação linear a partir do que acontece com $\ihat$ e $\jhat$, e escrever qualquer vetor no espaço transformado como sendo uma combinação linear de $f(\ihat)$ e $f(\jhat)$:
+$$
+\mathbf{S}\vvec = 
+	v_1 \begin{bmatrix} 2 \\ 0 \\ \end{bmatrix}
+	+ v_2 \begin{bmatrix} 1 \\ 1 \\ \end{bmatrix}
+$$
+o que deixa muito mais claro o que fazer para multiplicar uma matriz por um vetor.
+
+Note que a gente pode plotar tanto os vetores que entram nestas matrizes quanto os que saem porque ambas são matrizes com duas linhas e duas colunas.
+Estas matrizes quadradas são especiais porque o espaço de entrada e o espaço de saída possuem o mesmo número de dimensões.
+
+## Exercício 4
+
+Vamos considerar o que acontece com composições entre matrizes.
+
+1. Obtenha o produto entre a matriz $R$, definida no início desta seção, e os vetores $(2, 0)$ e $(1, 1)$. 
+Escreva estes produtos na forma de combinações lineares entre as colunas da matriz $R$.
+
+2. Leia o código abaixo: 
+
+```{r composition, fig.asp = 1, eval = FALSE}
+### aqui a gente roda o paralelogramo
+fg.quadrado <- t(R %*% t(f.quadrado))
+
+plotEmptyCanvas()
+points(fg.quadrado, type = 'b')
+```
+
+Este código aplica a matriz R sobre a saída de multiplicar as arestas do quadrado por S.
+Você consegue escrever um código que faça o oposto (pega o quadrado, aplica R, depois aplica S e mostra o resultado)?
+
+3. As duas formas geradas são iguais?
