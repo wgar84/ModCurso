@@ -465,7 +465,7 @@ plotEmptyCanvas()
 points(fg.quadrado, type = 'b')
 ```
 
-Este código aplica a matriz R sobre a saída de multiplicar as arestas do quadrado por S.
-Você consegue escrever um código que faça o oposto (pega o quadrado, aplica R, depois aplica S e mostra o resultado)?
+Este código aplica a matriz $\mathbf{R}$ sobre a saída de multiplicar as arestas do quadrado por $\mathbf{S}$.
+Você consegue escrever um código que faça o oposto (pega o quadrado, aplica $\mathbf{R}$, depois aplica $\mathbf{S}$ e mostra o resultado)?
 
 3. As duas formas geradas são iguais?

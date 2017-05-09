@@ -5,8 +5,6 @@ render('02/index.Rmd', output_dir = '02/')
 
 render('02/guia.Rmd', output_dir = '02/')
 
-render('../Tutoriais/algelin.Rmd', output_dir = '../Tutoriais', output_format = 'pdf_document')
-
 render('../Tutoriais/algelin.Rmd', output_dir = '../Tutoriais', output_format = 'html_document')
 
 render('../Tutoriais/matrizes.Rmd', output_dir = '../Tutoriais')
