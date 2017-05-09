@@ -353,7 +353,7 @@ São os mesmos valores. Os values são as variâncias nas direções dos compone
 
 # O primeiro componente principal
 
-Vocês leram sobre linhas de menor resistencia evolutiva no artigo do Schluter, e agora podemos entender porque essa linha corresponde ao primeiro componente principal. A quantidade de variação total na população é sempre preservada em todas essas analises que fizemos, afinal são só rotações. Para conferir isso, vamos somar as variâncias originais e somar as variâncias saindo da eigen():
+A quantidade de variação total na população é sempre preservada em todas essas analises que fizemos, afinal são só rotações. Para conferir isso, vamos somar as variâncias originais e somar as variâncias saindo da eigen():
 
 ```{r}
 var(dentus_A$humerus) + var(dentus_A$ulna) + var(dentus_A$femur) + var(dentus_A$tibia)
