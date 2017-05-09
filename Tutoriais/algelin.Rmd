@@ -452,8 +452,8 @@ Estas matrizes quadradas são especiais porque o espaço de entrada e o espaço 
 
 Vamos considerar o que acontece com composições entre matrizes.
 
-1. Obtenha o produto entre a matriz $R$, definida no início desta seção, e os vetores $(2, 0)$ e $(1, 1)$. 
-Escreva estes produtos na forma de combinações lineares entre as colunas da matriz $R$.
+1. Obtenha o produto entre a matriz $\mathbf{R}$, definida no início desta seção, e os vetores $(2, 0)$ e $(1, 1)$. 
+Escreva estes produtos na forma de combinações lineares entre as colunas da matriz $\mathbf{R}$.
 
 2. Leia o código abaixo: 
 
