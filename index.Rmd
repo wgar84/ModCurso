@@ -94,6 +94,8 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 ### 4. *Detecção de Padrões de Modularidade*
 
++ [Apresentação](https://github.com/wgar84/ModCurso/raw/master/Aulas/deteccao_modularidade.pdf)
+
 + Leituras Principais
 
     * Cheverud, J. M., G. P. Wagner, M. M. Dow. “Methods for the Comparative Analysis of Variation Patterns.” Evolution 38, no. 3 (1989): 201–213.
