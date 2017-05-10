@@ -136,4 +136,4 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 **Tutorial 4**: [*Detectando Modularidade*](Tutoriais/detectando_modularidade.html)
 
-**Tutorial 6**: [*Consequências Evolutivas*](Tutoriais/consequencia_evolutivas.html)
+**Tutorial 6**: [*Consequências Evolutivas*](Tutoriais/consequencias_evolutivas.html)
