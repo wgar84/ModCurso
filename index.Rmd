@@ -38,7 +38,13 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 [Leituras](leituras.zip)
 
+### 0. Histórico
+
++ [Apresentação](Aulas/Historico.pptx)
+
 ### 1. *Níveis de modularidade: individual e populacional*
+
++ [Apresentação](Aulas/Niveis_modularidade.pptx)
 
 + Leitura principal: 
 
@@ -76,9 +82,14 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 ### 3. *Caracterização de variação em dimensionalidade alta*
 
++ [Apresentação](Aulas/Quantificando variação multivariada.pdf)
+
 + Caracteres e matrizes
+
 + Modelos lineares
+
 + Componentes principais
+
 + Caracterização de variação direcional
 
 ### 4. *Detecção de Padrões de Modularidade*
