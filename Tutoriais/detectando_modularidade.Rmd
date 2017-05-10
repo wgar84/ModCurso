@@ -1,0 +1,151 @@
+---
+title: "Detectando modularidade"
+author: "Bárbara M. A. Costa"
+date: "10/05/2017"
+output: 
+  html_document:
+    code_folding: show
+    highlight: pygments
+    number_sections: false
+    toc: true
+    theme: yeti
+    toc_depth: 2
+    toc_float: 
+      collapsed: false
+      smooth_scroll: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Objetivos
+
+Nessa aula prática vamos explorar os métodos de deteção de modularidade. Inicialmente, utilizando matrizes teóricas baseadas em função e desenvolvimento compartilhados entre os 35 caracteres cranianos de duas espécies de Dentus (D e E), seguiremos a abordagem utilizada por Cheverud (1995, 1996) e Porto et al (2013). Em seguida, utilizaremos a uma abordagem recente (Goswami e Finarelli, 2016), baseada máxima verossimilhança para estimar as correlações dos modelos de modularidade. 
+
+Para realizar essas atividade, inicialmente, teremos que:
+
+1. Estimar matrizes de correlação para os caracteres cranianos das espécies D e E de *Dentus*
+
+2. Calcular a magnitude de integração geral
+
+3. Correlacionar as matrizes teóricas às matrizes de correlação observadas para cada espécie. Em seguida, usaremos o teste de Mantel para verificar a probabilidade referente à cada comparação (Cheverud 1995, 1996 e Porto et al 2013).
+
+4. Remover o tamanho das matrizes e realizar o teste de modularidade novamente
+
+5. Testar modularidade em *Macaca fuscata* utilizando o método de  (Goswami e Finarelli, 2016)
+
+
+## As análises
+
+Vamos carregar os dados que vamos utilizar nesta aula. Você já deve ter salvado o arquivo *dentus_skulls.Rdata* em seu diretório de trabalho. No quadrante inferior direito do RStudio, clique nos três pontinhos (em Files) e selecione o arquivo. Clique nele e confirme o "load" dos dados. Você também pode usar fazer o mesmo usando a função load(), exemplo: *load("~/aula modularidade/pratica/dentus_skulls.Rdata")*.
+
+```{r, warning=FALSE, message=FALSE}
+# Carregando alguns pacotes 
+
+require (evolqg)
+require (EMMLi)
+
+```
+
+Agora vamos olhas as primeiras linhas dos objetos:
+
+```{r, eval=FALSE}
+head(dentus_Models)
+head(D_skull_cov)
+head(E_skull_cov)
+```
+
+Os objetos D_skull_cov e E_skull_cov são matrizes de covariância do crânio das espécies D e E de *Dentus*. Cada matriz tem 35 medidas.
+
+Para o teste de modularidade, usaremos as matrizes de correlação. Para obtermos as matrizes de correlação a partir das matrizes de covariância vamos usar a função *cov2cor*.
+
+```{r, eval=FALSE}
+D_skull_cor = cov2cor(as.matrix(D_skull_cov))
+E_skull_cor = cov2cor(as.matrix(E_skull_cov))
+```
+
+Agora vamos olhas as primeiras linhas das matrizes de correlação das duas espécies: 
+
+```{r, eval=FALSE}
+head(D_skull_cor)
+head(E_skull_cor)
+```
+
+Nós vimos em aula que a magnitude de integração geral se refere ao nível ou à intensidade de associação entre os caracteres, nesse caso, do crânio.
+
+Vamos calcular a magnitude de integração geral para os crânios dessas duas espécies.
+Porém, antes de rodar a função, dê uma olhada nela e lembre-se como é feito o cálculo da magnitude de integração. 
+
+```{r, eval=FALSE}
+CalcR2
+```
+
+Agora vamos comparar a intensidade de associação entre os caracteres cranianos das duas espécies:
+
+```{r, eval=FALSE}
+CalcR2(D_skull_cor)
+CalcR2(E_skull_cor)
+```
+
+Ótimo! Agora, vamos usar a funçao TestModularity() para investigar o padrão de modularidade nos crânios das duas espécies de *Dentus*. Para isso, vamos correlacionar uma matriz teórica baseada em hipótese de relações de desenvolvimento e função entre os caracteres medidos (baseada na literatura existente para esse grupo). Elas sao duas espécies do mesmo gênero e, por isso, vamos usar as mesmas hipóteses. Quais foram os módulos detectados com essa análise?
+
+```{r, eval=FALSE}
+TestModularity(D_skull_cor, dentus_Models)
+TestModularity(E_skull_cor, dentus_Models)
+```
+
+O tamanho pode ser visto como um fator global, ou seja, ele estabelece associações entre os caracteres englobando os fatores locais e, dessa forma, pode obscurecer a individualidade dos módulos. Vamos usar remover o tamanho da matriz usando função **RemoveSize()**. Vamos fazer isso na matriz de covariância (removendo o primeiro componente principal dela) para convertê-la novamente em uma matriz de correlação.
+
+```{r, eval=FALSE}
+no.size.D_skull_cov <- RemoveSize(D_skull_cov)
+no.size.E_skull_cov <- RemoveSize(E_skull_cov)
+```
+
+Agora vamos transformar essas matrizes de covariância com tamanho removido em matrizes de correlação novamente.
+
+```{r, eval=FALSE}
+no.size.D_skull_cor <- cov2cor(as.matrix(no.size.D_skull_cov))
+no.size.E_skull_cor <- cov2cor(as.matrix(no.size.E_skull_cov))
+```
+
+Em seguida, podemos investigar novamente a presença de módulos, a partir das novas matrizes de correlação (sem tamanho).
+
+```{r, eval=FALSE}
+TestModularity(no.size.D_skull_cor, dentus_Models)
+TestModularity(no.size.E_skull_cor, dentus_Models)
+```
+
+Avaliamos até aqui o padrão de modularidade das espécies D e E, o índice de modularidade e a influência do tamanho na visualização dos módulos. Porém, uma pergunta que vem a mente é: Como faço para testar mais de um modelo de modularidade? Modelos diferentes que incluem apenas dois ou seis ou oito módulos, por exemplo? Vamos agora usar uma nova abordagem (baseada em máxima verossimilhança e comparação de modelos gerados) e testar modelos que possuem estruturas diferentes.
+
+Observação: se ainda não instalou algum desses pacotes, faça isso primeiro. Exemplo: **install.packages("EMMLi")**
+
+```{r, eval=FALSE}
+#carregue o pacote
+library (EMMLi)
+
+# vamos ver o dados presentes no pacote. Primeiro a matriz de correlação dos dados tomados do crânio de Macaca fuscata. Explore o objeto com str() e head().
+
+help("macacaCorrel")
+str(macacaCorrel)
+head(macacaCorrel)
+
+# veja no help a descrição dos modelos utilizados para testar os possíveis padrões de modularidade no crânio de Macaca fuscata. Explore o objeto.
+
+help("macacaModels")
+str(macacaModels)
+head(macacaModels)
+```
+
+Explorando os objetos *macacaCorrel* e *macacaModels*, como foi postado acima, você consegue identificar quantos indivíduos o dataset contém e quantos modelos de modularidade serão testados? Olhe os argumentos da função *EMMLi* e você vai perceber que um dos argumentos necessários para rodá-la é exatamente o número de indivíduos do dataset a ser testado (macacaCorrel).
+
+Agora, você pode correr a função **EMMLi** e testar qual modelo de modularidade será mais adequado para o crânio de *Macaca fuscata*. Crie um objeto chamado ModeloMacaca para isso e veja qual foi o modelo selecionado como o padrão de modularidade para o dataset de *Macaca fuscata*. Dica: abra o help da função e veja os argumentos necessários.
+
+
+Pronto! definido o modelo de modularidade para *M. fuscata* vamos plotar os valores de correlaçoes dentro e entre módulos que foi dado depois de rodar a função **EMMLi**. No plot abaixo, os círculos representam os valores dentro dos módulos e os triângulos reprensetam os valores entre módulos.
+
+```{r, eval=FALSE}
+plot(modeloMacaca$rho$`Cheverud.sep.Mod + sep.between`[2,],pch=c(rep(1,5),rep(2,17)),xlim=c(1,25), xlab="Dentro e entre modulos", ylab = "Correlacoes")
+```
+
+Observe os valores de correlação dentro e entre os módulos. Como você interpretaria esses valores dados pelo gráfico? 

@@ -1,8 +1,9 @@
 ## **592.5906** *Modularidade: conectando padrões e processos em evolução multivariada*
 
-### Preliminares
 
-#### R
+# Preliminares
+
+## R
 
 Inicialmente, você deve instalar o **R** no seu computador. 
 Você pode encontrá-lo no sítio <http://www.r-project.org>.
@@ -23,9 +24,17 @@ Durante o curso, nós vamos introduzir alguns conceitos que são cruciais para o
 Se você quiser começar a entender a linguagem antes do curso iniciar, recomendamos o sítio <http://ecologia.ib.usp.br/bie5782/>, da disciplina básica de R oferecida pelo Departamento de Ecologia do IB-USP. 
 O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
-### Aulas Teóricas
+# Aulas Teóricas
 
-**Aula 1**: *Níveis de modularidade: individual e populacional*
+[Leituras](leituras.zip)
+
+### 0. Histórico
+
++ [Apresentação](Aulas/Historico.pptx)
+
+### 1. *Níveis de modularidade: individual e populacional*
+
++ [Apresentação](Aulas/Niveis_modularidade.pptx)
 
 + Leitura principal: 
 
@@ -43,11 +52,9 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
-**Aula 2**: *Homologias, Caracteres e Mensurações* 
+### 2. *Homologias, Caracteres e Mensurações* 
 
-<!--- + [Apresentação](Aulas/02/index.html?presentme=false) -->
-
-<!--- + [Transcrição](Aulas/02/guia.pdf) -->
++ [Apresentação](Aulas/02/index.html?presentme=false)
 
 + Leituras principais:
 
@@ -63,14 +70,19 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Wagner, G. P., M. D. Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
 
-**Aula 3**: *Caracterização de variação em dimensionalidade alta*
+### 3. *Caracterização de variação em dimensionalidade alta*
+
++ [Apresentação](Aulas/Quantificando variação multivariada.pdf)
 
 + Caracteres e matrizes
+
 + Modelos lineares
+
 + Componentes principais
+
 + Caracterização de variação direcional
 
-**Aula 4**: *Detecção de Padrões de Modularidade*
+### 4. *Detecção de Padrões de Modularidade*
 
 + Leituras Principais
 
@@ -79,14 +91,15 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
   * Goswami, A., J. A. Finarelli. “EMMLi: A Maximum Likelihood Approach to the Analysis of Modularity.” Evolution 70, no. 7 (July 1, 2016): 1622–37. doi:10.1111/evo.12956.
 
 
-**Aula 5**: *Paisagem adaptativa fenotípica*
+### 5. *Paisagem adaptativa fenotípica*
+
 + Fenótipo e seleção
 + Superfícies adaptativas individuais e populacionais
 + Modelos lineares e estimativas de seleção
 + Os 3 tipos de &#x03B2; (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
 + Matriz &#x03B3;
 
-**Aula 6**: *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
+### 6. *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
 
 + Leituras principais:
 
@@ -103,10 +116,14 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
   * Arnold, S. J. “Constraints on phenotypic evolution.” The American Naturalist 140 (1992): S85-S107.
 
-### Tutoriais
+# Tutoriais
 
 **Tutorial 1**: [*Introdução ao R*](Tutoriais/inicio.html)
 
 **Tutorial 2**: [*Básico de Álgebra Linear*](Tutoriais/algelin.html)
 
 **Tutorial 3**: [*Estimando matrizes e componentes principais*](Tutoriais/matrizes.html)
+
+**Tutorial 4**: [*Detectando Modularidade*](Tutoriais/detectando_modularidade.html)
+
+**Tutorial 6**: [*Consequências Evolutivas*](Tutoriais/consequencias_evolutivas.html)
