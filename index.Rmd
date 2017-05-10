@@ -48,19 +48,19 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 + Leitura principal: 
 
-  * Cheverud, J M. “Developmental Integration and the Evolution of Pleiotropy.” American Zoology 36 (1996): 44–50.
+    * Cheverud, J M. “Developmental Integration and the Evolution of Pleiotropy.” American Zoology 36 (1996): 44–50.
 
     * Atentem para as ideias de níveis de integração/modularidade e a interrelação entre eles; de seleção estabilizadora e efeitos genéticos pleiotrópicos.
 
 + Leituras complementares: 
   
-  * Bowler, P. “Variation from Darwin to the Modern Synthesis.” *In* Variation: A Central Concept in Biology, 2003. 
+    * Bowler, P. “Variation from Darwin to the Modern Synthesis.” *In* Variation: A Central Concept in Biology, 2003. 
   
-  * Klingenberg, C P. “Morphological Integration and Developmental Modularity.” Annual Review of Ecology, Evolution, and Systematics 39, no. 1 (2008): 115–132. doi:10.1146/annurev.ecolsys.37.091305.110054.
+    * Klingenberg, C P. “Morphological Integration and Developmental Modularity.” Annual Review of Ecology, Evolution, and Systematics 39, no. 1 (2008): 115–132. doi:10.1146/annurev.ecolsys.37.091305.110054.
 
-  * Young, N. M., B. Hallgrímsson. “Serial Homology and the Evolution of Mammalian Limb Covariation Structure.” Evolution 59, no. 12 (2005): 2691–2704.
+    * Young, N. M., B. Hallgrímsson. “Serial Homology and the Evolution of Mammalian Limb Covariation Structure.” Evolution 59, no. 12 (2005): 2691–2704.
 
-  * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
+    * Zelditch, M. L., D. L. Swiderski. “Epigenetic Interactions: The Developmental Route to Functional Integration.” *In* Epigenetics: Linking Genotype and Phenotype in Development and Evolution, 290–316, 2011.
 
 ### 2. *Homologias, Caracteres e Mensurações* 
 
@@ -68,17 +68,17 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 + Leituras principais:
 
-  * Wagner, G. P. “What is 'homology thinking' and what is it for?” Journal of Experimental Zoology Part B: Molecular and Developmental Evolution 326, no. 1 (2016): 3–8. doi:10.1002/jez.b.22656.
+    * Wagner, G. P. “What is 'homology thinking' and what is it for?” Journal of Experimental Zoology Part B: Molecular and Developmental Evolution 326, no. 1 (2016): 3–8. doi:10.1002/jez.b.22656.
 
-  * Houle, D., C. Pélabon, G. P. Wagner, T. F. Hansen. “Measurement and Meaning In Biology.” The Quartely Review of Biology 86, no. 1 (2011): 3–34.
+    * Houle, D., C. Pélabon, G. P. Wagner, T. F. Hansen. “Measurement and Meaning In Biology.” The Quartely Review of Biology 86, no. 1 (2011): 3–34.
     
-	* Ler do início até a seção “Pragmatic Measurement Theory” (13 páginas).
+	  * Ler do início até a seção “Pragmatic Measurement Theory” (13 páginas).
 
 + Leituras complementares:
   
-  * Hansen, T. F., D. Houle. “Measuring and Comparing Evolvability and Constraint in Multivariate Characters.” Journal of Evolutionary Biology 21, no. 5 (2008): 1201–1219. doi:10.1111/j.1420-9101.2008.01573.x.
+    * Hansen, T. F., D. Houle. “Measuring and Comparing Evolvability and Constraint in Multivariate Characters.” Journal of Evolutionary Biology 21, no. 5 (2008): 1201–1219. doi:10.1111/j.1420-9101.2008.01573.x.
 
-  * Wagner, G. P., M. D. Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
+    * Wagner, G. P., M. D. Laubichler. “Character Identification in Evolutionary Biology: The Role of the Organism.” Theory in Biosciences 119, no. 1 (2000): 20–40.
 
 ### 3. *Caracterização de variação em dimensionalidade alta*
 
@@ -96,35 +96,47 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 + Leituras Principais
 
-  * Cheverud, J. M., G. P. Wagner, M. M. Dow. “Methods for the Comparative Analysis of Variation Patterns.” Evolution 38, no. 3 (1989): 201–213.
+    * Cheverud, J. M., G. P. Wagner, M. M. Dow. “Methods for the Comparative Analysis of Variation Patterns.” Evolution 38, no. 3 (1989): 201–213.
 
-  * Goswami, A., J. A. Finarelli. “EMMLi: A Maximum Likelihood Approach to the Analysis of Modularity.” Evolution 70, no. 7 (July 1, 2016): 1622–37. doi:10.1111/evo.12956.
+    * Goswami, A., J. A. Finarelli. “EMMLi: A Maximum Likelihood Approach to the Analysis of Modularity.” Evolution 70, no. 7 (July 1, 2016): 1622–37. doi:10.1111/evo.12956.
 
 
 ### 5. *Paisagem adaptativa fenotípica*
 
-+ Fenótipo e seleção
-+ Superfícies adaptativas individuais e populacionais
-+ Modelos lineares e estimativas de seleção
-+ Os 3 tipos de &#x03B2; (gradientes, parâmetros de modelos lineares, e covariância com aptidão)
-+ Matriz &#x03B3;
++ [Apresentação](https://github.com/wgar84/ModCurso/raw/master/Aulas/Sele%C3%A7%C3%A3o%20e%20varia%C3%A7%C3%A3o.pdf)
+
+* Leituras principais:
+
+    + Capítulos 6 e 7 do livro: Rice, S.H., 2004. Evolutionary theory: mathematical and conceptual foundations. Sunderland, MA: Sinauer Associates.
+
+    + Arnold, Stevan J., Michael E. Pfrender, and Adam G. Jones. 2001. “The Adaptive Landscape as a Conceptual Bridge between Micro- and Macroevolution.” Genetica 112/113: 9–32.
+
+  
+* Leituras adicionais:
+  
+    + Schluter, Dolph, and Douglas Nychka. 1994. “Exploring Fitness Surfaces.” The American Naturalist 143 (4): 597–616.
+  
+    + Lande, Russell, and S. J. Stevan J. Arnold. 1983. “The Measurement of Selection on Correlated Characters.” Evolution; International Journal of Organic Evolution 37 (6): 1210.
+    + Walsh, Bruce, and Mark W. Blows. 2009. “Abundant Genetic Variation + Strong Selection = Multivariate Genetic Constraints: A Geometric View of Adaptation.” Annual Review of Ecology, Evolution, and Systematics 40 (1): 41–59.
+    
 
 ### 6. *Consequências evolutivas: restrição, evolvabilidade e flexibilidade*
 
 + Leituras principais:
 
-  * Klingenberg, C. P. “Developmental constraints, modules and evolvability.” Variation: A central concept in biology (2005): 219-247.
+    * Klingenberg, C. P. “Developmental constraints, modules and evolvability.” Variation: A central concept in biology (2005): 219-247.
     
-	* Ler do início até o final da seção "Evolvability and Constraints" (páginas 219 a 224). 
+	  * Ler do início até o final da seção "Evolvability and Constraints" (páginas 219 a 224). 
 
-  * Collar, D. C., Wainwright, P. C., Alfaro, M. E., Revell, L. J., Mehta, R. S. “Biting disrupts integration to spur skull evolution in eels.” Nature communications, 5 (2014). 
+    * Collar, D. C., Wainwright, P. C., Alfaro, M. E., Revell, L. J., Mehta, R. S. “Biting disrupts integration to spur skull evolution in eels.” Nature communications, 5 (2014). 
 
-  * Marroig, G., Shirai, L., Porto, A., de Oliveira, F., De Conto, V. “The evolution of modularity in the mammalian skull II: evolutionary consequences.”  Evolutionary Biology 36, no. 1 (2009): 136-148.
+    * Marroig, G., Shirai, L., Porto, A., de Oliveira, F., De Conto, V. “The evolution of modularity in the mammalian skull II: evolutionary consequences.”  Evolutionary Biology 36, no. 1 (2009): 136-148.
 
 + Leituras complementares:
-  * Armbruster, W. S, Pélabon, C., Bolstad, G. H., Hansen, T. “Integrated phenotypes: understanding trait covariation in plants and animals.” Phil. Trans. R. Soc. B 369, no. 1649 (2014): 20130245.
+  
+    * Armbruster, W. S, Pélabon, C., Bolstad, G. H., Hansen, T. “Integrated phenotypes: understanding trait covariation in plants and animals.” Phil. Trans. R. Soc. B 369, no. 1649 (2014): 20130245.
 
-  * Arnold, S. J. “Constraints on phenotypic evolution.” The American Naturalist 140 (1992): S85-S107.
+    * Arnold, S. J. “Constraints on phenotypic evolution.” The American Naturalist 140 (1992): S85-S107.
 
 # Tutoriais
 
@@ -135,5 +147,7 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 **Tutorial 3**: [*Estimando matrizes e componentes principais*](Tutoriais/matrizes.html)
 
 **Tutorial 4**: [*Detectando Modularidade*](Tutoriais/detectando_modularidade.html)
+
+**Tutorial 5**: [*Seleção multivariada*](Tutoriais/selecao.html)
 
 **Tutorial 6**: [*Consequências Evolutivas*](Tutoriais/consequencias_evolutivas.html)
