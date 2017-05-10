@@ -1,5 +1,5 @@
 ---
-title: "Estimando matrizes e componentes principais"
+title: "Quantificando seleção multivariada"
 author: "Diogo Melo"
 date: "11 de Maio de 2017"
 output:
