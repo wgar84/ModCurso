@@ -292,8 +292,8 @@ div.tocify {
 <p>Vamos carregar os dados que vamos utilizar nesta aula. Você já deve ter salvado o arquivo <a href="https://github.com/wgar84/ModCurso/raw/master/Tutoriais/dentus_skulls.Rdata">dentus_skulls.Rdata</a> em seu diretório de trabalho. No quadrante inferior direito do RStudio, clique nos três pontinhos (em Files) e selecione o arquivo. Clique nele e confirme o “load” dos dados. Você também pode usar fazer o mesmo usando a função load(), exemplo: <em>load(“~/aula modularidade/pratica/dentus_skulls.Rdata”)</em>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Carregando alguns pacotes </span>
 
-<span class="kw">require</span> (evolqg)
-<span class="kw">require</span> (EMMLi)</code></pre></div>
+if(!<span class="kw">require</span>(evolqg)){<span class="kw">install.packages</span>(<span class="st">&quot;evolqg&quot;</span>); <span class="kw">library</span>(evolqg)}
+if(!<span class="kw">require</span>(EMMLi)){<span class="kw">install.packages</span>(<span class="st">&quot;EMMLi&quot;</span>); <span class="kw">library</span>(EMMLi)}</code></pre></div>
 <p>Agora vamos olhas as primeiras linhas dos objetos:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(dentus_Models)
 <span class="kw">head</span>(D_skull_cov)

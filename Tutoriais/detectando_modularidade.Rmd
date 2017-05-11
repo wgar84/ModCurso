@@ -43,9 +43,8 @@ Vamos carregar os dados que vamos utilizar nesta aula. Você já deve ter salvad
 ```{r, warning=FALSE, message=FALSE}
 # Carregando alguns pacotes 
 
-require (evolqg)
-require (EMMLi)
-
+if(!require(evolqg)){install.packages("evolqg"); library(evolqg)}
+if(!require(EMMLi)){install.packages("EMMLi"); library(EMMLi)}
 ```
 
 Agora vamos olhas as primeiras linhas dos objetos:
