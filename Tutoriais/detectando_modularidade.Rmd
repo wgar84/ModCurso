@@ -38,7 +38,7 @@ Para realizar essas atividade, inicialmente, teremos que:
 
 ## As análises
 
-Vamos carregar os dados que vamos utilizar nesta aula. Você já deve ter salvado o arquivo *dentus_skulls.Rdata* em seu diretório de trabalho. No quadrante inferior direito do RStudio, clique nos três pontinhos (em Files) e selecione o arquivo. Clique nele e confirme o "load" dos dados. Você também pode usar fazer o mesmo usando a função load(), exemplo: *load("~/aula modularidade/pratica/dentus_skulls.Rdata")*.
+Vamos carregar os dados que vamos utilizar nesta aula. Você já deve ter salvado o arquivo [dentus_skulls.Rdata](https://github.com/wgar84/ModCurso/raw/master/Tutoriais/dentus_skulls.Rdata) em seu diretório de trabalho. No quadrante inferior direito do RStudio, clique nos três pontinhos (em Files) e selecione o arquivo. Clique nele e confirme o "load" dos dados. Você também pode usar fazer o mesmo usando a função load(), exemplo: *load("~/aula modularidade/pratica/dentus_skulls.Rdata")*.
 
 ```{r, warning=FALSE, message=FALSE}
 # Carregando alguns pacotes 
