@@ -144,6 +144,8 @@ O link "Atividades Preparatórias" oferece um introdução da linguagem.
 
 # Tutoriais
 
+[**Todos os tutoriais em pdf**](Tutoriais/tutoriais_em_pdf.zip)
+
 **Tutorial 1**: [*Introdução ao R*](Tutoriais/inicio.html)
 
 **Tutorial 2**: [*Básico de Álgebra Linear*](Tutoriais/algelin.html)

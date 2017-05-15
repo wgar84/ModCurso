@@ -11,6 +11,16 @@ output:
     toc_float:
       collapsed: no
       smooth_scroll: no
+  pdf_document:
+    latex_engine: xelatex
+    keep_tex: true
+header-includes:
+  - \usepackage[brazilian]{babel}
+  - \usepackage[utf8]{inputenc}
+  - \usepackage[bitstream-charter]{mathdesign}
+  - \usepackage{setspace}
+  - \doublespacing
+fontsize: 14pt
 ---
 
 ```{r setup, include=FALSE}
@@ -161,9 +171,7 @@ $$
 
 Essa é a equação multivariada de resposta à seleção, ou a Equação de Lande. É a equação mais cool, como podemos ver nessa foto:
 
-```{r, out.width = "400px", echo = FALSE}
-knitr::include_graphics("lande.jpg")
-```
+<img src='lande.jpg' width = 400px>
 
 Podemos escrever a resposta à seleção em função dos diferenciais de seleção, lembrando que o gradiente de seleção é o diferencial escrito na escala da P. Nesse caso, a equação fica:
 
@@ -180,10 +188,10 @@ Agora que sabemos o que o $\beta$ representa e como interpretar seus valores, va
 Vamos pensar no sistema de equações que escrevemos ali em cima:
 
 $$
-\begin{align}
+\begin{aligned}
 \Delta z_x &= G_{x} \times \beta_x + G_{xy} \times \beta_{y} \\
 \Delta z_y &= G_{y} \times \beta_y + G_{xy} \times \beta_{x} 
-\end{align}
+\end{aligned}
 $$
 
 Parece bom, se sabemos a matriz G (no nosso caso usamos a P como aproximação da G), sabemos o $\Delta z$, temos duas equações e duas incognitas, podemos achar o $\beta$. No R, um sistema de equações desse tipo pode ser resolvido usando a forma matricial
@@ -205,10 +213,10 @@ G %*% beta
 Então, se estamos medindo uma população, e observamos um $\Delta z = [4.4, 5.2]$ e uma matriz G com variâncias 2 e covariância 1.2, podemos calcular beta usando a equação:
 
 $$
-\begin{align}
+\begin{aligned}
 2 \times \beta_x + 1.2 \times \beta_{y} &= 4.4\\
 2 \times \beta_y + 1.2 \times \beta_{x} &= 5.2
-\end{align}
+\end{aligned}
 $$
 
 No R, isso seria:

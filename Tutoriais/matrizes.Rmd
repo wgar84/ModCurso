@@ -11,6 +11,15 @@ output:
     toc_float:
       collapsed: no
       smooth_scroll: no
+  pdf_document:
+    latex_engine: xelatex
+header-includes:
+  - \usepackage[brazilian]{babel}
+  - \usepackage[utf8]{inputenc}
+  - \usepackage[bitstream-charter]{mathdesign}
+  - \usepackage{setspace}
+  - \doublespacing
+fontsize: 14pt
 ---
 
 ```{r setup, include=FALSE}

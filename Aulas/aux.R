@@ -21,6 +21,19 @@ browseURL('02/index.html')
 
 browseURL('../Tutoriais/algelin.html')
 
+render('../Tutoriais/inicio.Rmd', output_dir = '../Tutoriais', output_format = 'pdf_document')
+
+render('../Tutoriais/algelin.Rmd', output_dir = '../Tutoriais', output_format = 'pdf_document')
+
+render('../Tutoriais/matrizes.Rmd', output_dir = '../Tutoriais', output_format = 'pdf_document')
+
+render('../Tutoriais/detectando_modularidade.Rmd', output_dir = '../Tutoriais', output_format = 'pdf_document')
+
+render('../Tutoriais/selecao.Rmd', output_dir = '../Tutoriais', output_format = 'pdf_document')
+
+render('../Tutoriais/consequencias_evolutivas.Rmd', output_dir = '../Tutoriais', output_format = 'pdf_document')
+
+
 system('evince 02/guia.pdf &')
 
 system('evince ../Tutoriais/algelin.pdf &')
